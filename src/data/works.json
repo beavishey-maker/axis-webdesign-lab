@@ -4,7 +4,7 @@
     "title": "イナトラ / 虎屋横丁 商店会サイト",
     "client": "虎屋横丁・稲荷小路親交会（仙台・国分町）",
     "expertise": ["LP制作", "和モダンデザイン"],
-    "thumbnail": "",
+    "thumbnail": "/works/shotengai-inatora.jpg",
     "href": "https://deluxe-lollipop-605712.netlify.app/",
     "year": 2024
   },
@@ -13,7 +13,7 @@
     "title": "Boulangerie Soleil ベーカリーサイト",
     "client": "Boulangerie Soleil（東京・麻布十番）",
     "expertise": ["LP制作", "ブランドデザイン"],
-    "thumbnail": "",
+    "thumbnail": "/works/bakery-soleil.jpg",
     "href": "https://cheery-strudel-31994c.netlify.app/",
     "year": 2024
   },
@@ -22,7 +22,7 @@
     "title": "Café Étoile スペシャルティカフェサイト",
     "client": "Café Étoile（東京）",
     "expertise": ["LP制作", "多言語対応"],
-    "thumbnail": "",
+    "thumbnail": "/works/cafe-etoile.jpg",
     "href": "https://profound-zuccutto-330102.netlify.app/",
     "year": 2024
   },
@@ -31,7 +31,7 @@
     "title": "NOIR 高級ヘアサロンサイト",
     "client": "NOIR Hair Salon（東京）",
     "expertise": ["LP制作", "カスタムアニメーション"],
-    "thumbnail": "",
+    "thumbnail": "/works/beauty-noir.jpg",
     "href": "https://gentle-rolypoly-bceb4e.netlify.app/",
     "year": 2024
   },
@@ -40,7 +40,7 @@
     "title": "KINGYŌ ニュークラブ公式サイト",
     "client": "KINGYŌ（仙台・国分町）",
     "expertise": ["LP制作", "LINE予約連携"],
-    "thumbnail": "",
+    "thumbnail": "/works/cabaret-kingyo.jpg",
     "href": "https://keen-starlight-4f59dc.netlify.app/",
     "year": 2024
   },
@@ -49,7 +49,7 @@
     "title": "サンライズ不動産 コーポレートサイト",
     "client": "サンライズ不動産（東京・神奈川・埼玉）",
     "expertise": ["コーポレートサイト", "物件検索UI"],
-    "thumbnail": "",
+    "thumbnail": "/works/realestate.jpg",
     "href": "https://resilient-cuchufli-8a33fd.netlify.app/",
     "year": 2024
   },
@@ -58,35 +58,35 @@
     "title": "爪整体 AI健康診断サービス",
     "client": "nail ebon（爪整体）",
     "expertise": ["AIチャットボット", "多言語対応", "LP制作"],
-    "thumbnail": "",
+    "thumbnail": "/works/nail-seitai.jpg",
     "href": "https://nail-ebon.vercel.app/ja",
     "year": 2024
   },
   {
     "id": "work-08",
-    "title": "money web FP・相談サービス",
-    "client": "money web（40〜50代女性向けFP）",
-    "expertise": ["LP制作", "AIチャットボット"],
-    "thumbnail": "",
-    "href": "https://moneyweb-react.vercel.app/",
-    "year": 2024
-  },
-  {
-    "id": "work-09",
     "title": "アイルビジョン コーポレートサイト",
     "client": "株式会社I'll Vision（仙台・宮城）",
     "expertise": ["コーポレートサイト", "AIチャットボット", "公式LINE"],
-    "thumbnail": "",
+    "thumbnail": "/works/halvision.jpg",
     "href": "https://illvision.jp/",
     "year": 2023
   },
   {
-    "id": "work-10",
+    "id": "work-09",
     "title": "LED VISION JAPAN LEDポータル",
     "client": "HaLVision（仙台）",
     "expertise": ["ポータルサイト", "AIチャットボット"],
-    "thumbnail": "",
+    "thumbnail": "/works/led-portal.jpg",
     "href": "https://halvision.shop/",
+    "year": 2023
+  },
+  {
+    "id": "work-10",
+    "title": "SENCABA キャバクラ予約サービス",
+    "client": "SENCABA（仙台・国分町）",
+    "expertise": ["LP制作", "AI接客", "LINE連携"],
+    "thumbnail": "/works/sencaba.jpg",
+    "href": "https://www.sencaba.com/",
     "year": 2023
   },
   {
@@ -94,7 +94,7 @@
     "title": "鈴木紘一 衆議院議員 公式サイト",
     "client": "鈴木紘一事務所（宮城2区）",
     "expertise": ["コーポレートサイト", "AI問い合わせ"],
-    "thumbnail": "",
+    "thumbnail": "/works/politician-national.jpg",
     "href": "https://delightful-speculoos-76dbd6.netlify.app/",
     "year": 2023
   },
@@ -103,7 +103,7 @@
     "title": "佐藤陽子 市議会議員 公式サイト",
     "client": "佐藤陽子事務所（仙台市・青葉区）",
     "expertise": ["コーポレートサイト", "AIチャットボット"],
-    "thumbnail": "",
+    "thumbnail": "/works/politician-city.jpg",
     "href": "https://earnest-centaur-0e8bd6.netlify.app/",
     "year": 2023
   }
