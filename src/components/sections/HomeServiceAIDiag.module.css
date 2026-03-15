@@ -2,40 +2,38 @@
 .wrap {
   position: relative;
   overflow: hidden;
-  background: #040614;          /* cool dark — clearly different from LP's warm dark */
+  background: #f8f5ff;          /* very soft lavender off-white */
   padding: clamp(80px, 10vw, 120px) 0;
   display: flex;
   align-items: center;
 }
 
-/* Subtle purple glow bleeding from top-right */
+/* Subtle purple wash from top-right */
 .wrap::before {
   content: '';
   position: absolute;
   inset: 0;
   z-index: 1;
-  background:
-    radial-gradient(ellipse 60% 70% at 105% 0%, rgba(140, 60, 255, 0.09) 0%, transparent 65%),
-    radial-gradient(ellipse 80% 80% at 50% 50%, rgba(4, 6, 20, 0.5) 0%, rgba(4, 6, 20, 0.92) 100%);
+  background: radial-gradient(ellipse 55% 65% at 105% 0%, rgba(160, 80, 255, 0.07) 0%, transparent 60%);
   pointer-events: none;
 }
 
-/* Canvas: ambient texture */
+/* Canvas: ambient texture at low opacity on light bg */
 .canvas {
   position: absolute;
   inset: 0;
   z-index: 0;
-  opacity: 0.35;
+  opacity: 0.2;
 }
 
-/* Vignette — edges fade to section bg */
+/* Edge fade to match light bg */
 .vignette {
   position: absolute;
   inset: 0;
   z-index: 2;
   background:
-    linear-gradient(to right, #040614 0%, transparent 15%, transparent 85%, #040614 100%),
-    linear-gradient(to bottom, #040614 0%, transparent 12%, transparent 88%, #040614 100%);
+    linear-gradient(to right, #f8f5ff 0%, transparent 12%, transparent 88%, #f8f5ff 100%),
+    linear-gradient(to bottom, #f8f5ff 0%, transparent 10%, transparent 90%, #f8f5ff 100%);
   pointer-events: none;
 }
 
@@ -73,14 +71,13 @@
 
 .mockup {
   width: 220px;
-  background: #0a0c1c;
+  background: #1a1a2e;
   border-radius: 28px;
   overflow: hidden;
-  border: 2px solid rgba(192, 132, 252, 0.22);
+  border: 2px solid rgba(140, 80, 220, 0.25);
   box-shadow:
-    0 0 0 6px rgba(192, 132, 252, 0.05),
-    0 24px 60px rgba(0, 0, 0, 0.5),
-    0 0 80px rgba(192, 132, 252, 0.12);
+    0 20px 60px rgba(100, 60, 180, 0.15),
+    0 4px 20px rgba(0, 0, 0, 0.12);
   transform: rotate(3deg);
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -91,7 +88,7 @@
 
 .mockupBar {
   height: 26px;
-  background: #080a18;
+  background: #12122a;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -101,7 +98,7 @@
 .mockupCamera {
   width: 58px;
   height: 8px;
-  background: #14172a;
+  background: #1e1e3a;
   border-radius: 999px;
 }
 
@@ -122,26 +119,19 @@
   position: absolute;
   bottom: 28px;
   right: -18px;
-  background: rgba(8, 10, 24, 0.92);
-  border: 1px solid rgba(0, 212, 255, 0.35);
+  background: #fff;
+  border: 1px solid rgba(140, 80, 220, 0.2);
   border-radius: 8px;
   padding: 10px 14px;
   display: flex;
   flex-direction: column;
   gap: 3px;
-  box-shadow: 0 8px 28px rgba(0, 212, 255, 0.18);
-  backdrop-filter: blur(8px);
-  animation: badgePulse 3s ease-in-out infinite;
-}
-
-@keyframes badgePulse {
-  0%, 100% { box-shadow: 0 8px 28px rgba(0, 212, 255, 0.18); }
-  50% { box-shadow: 0 8px 40px rgba(0, 212, 255, 0.38); }
+  box-shadow: 0 8px 28px rgba(100, 60, 180, 0.12);
 }
 
 .scoreBadge_label {
   font-size: 0.63rem;
-  color: rgba(255, 255, 255, 0.45);
+  color: rgba(0, 0, 0, 0.4);
   letter-spacing: 0.06em;
 }
 
@@ -149,14 +139,13 @@
   font-family: var(--font-heading);
   font-size: 2rem;
   font-weight: 900;
-  color: #00D4FF;
+  color: #7c3aed;
   line-height: 1;
-  text-shadow: 0 0 18px rgba(0, 212, 255, 0.8);
 }
 
 .scoreBadge_status {
   font-size: 0.63rem;
-  color: #00E87A;
+  color: #059669;
   font-weight: 600;
 }
 
@@ -172,14 +161,13 @@
   transform: translateX(0);
 }
 
-/* Badge — same sizing as LP section */
 .badge {
   display: inline-block;
   padding: 4px 14px;
   border-radius: 999px;
-  background: rgba(192, 132, 252, 0.12);
-  border: 1px solid rgba(192, 132, 252, 0.38);
-  color: #c084fc;
+  background: rgba(124, 58, 237, 0.08);
+  border: 1px solid rgba(124, 58, 237, 0.3);
+  color: #7c3aed;
   font-size: 0.7rem;
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -187,40 +175,36 @@
   margin-bottom: 20px;
 }
 
-/* Title — same sizing as LP */
 .title {
   font-family: var(--font-heading);
   font-size: clamp(2.6rem, 6vw, 4.5rem);
   font-weight: 900;
   line-height: 1.05;
   letter-spacing: -0.04em;
-  color: #fff;
+  color: #111;
   margin: 0 0 12px;
 }
 
 .titleAccent {
-  color: #c084fc;
-  text-shadow: 0 0 30px rgba(192, 132, 252, 0.7), 0 0 70px rgba(192, 132, 252, 0.3);
+  color: #7c3aed;
 }
 
-/* Tagline — same sizing as LP */
 .tagline {
   font-family: var(--font-heading);
   font-size: clamp(1rem, 2.4vw, 1.3rem);
   font-weight: 700;
-  color: rgba(255, 255, 255, 0.75);
-  letter-spacing: 0.05em;
+  color: rgba(0, 0, 0, 0.65);
+  letter-spacing: 0.04em;
   margin: 0 0 16px;
 }
 
 .desc {
   font-size: 0.9rem;
   line-height: 1.85;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(0, 0, 0, 0.5);
   margin: 0 0 28px;
 }
 
-/* Stats — same sizing as LP */
 .stats {
   display: flex;
   gap: clamp(20px, 5vw, 40px);
@@ -239,13 +223,12 @@
   font-size: clamp(2rem, 4.5vw, 3rem);
   font-weight: 900;
   line-height: 1;
-  color: #c084fc;
-  text-shadow: 0 0 18px rgba(192, 132, 252, 0.55);
+  color: #7c3aed;
 }
 
 .statLabel {
   font-size: 0.72rem;
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(0, 0, 0, 0.4);
   letter-spacing: 0.08em;
 }
 
