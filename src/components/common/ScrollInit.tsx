@@ -6,7 +6,9 @@ export default function ScrollInit() {
   useEffect(() => {
     let rafId: number
     const update = () => {
-      document.documentElement.style.setProperty('--scroll-y', `${window.scrollY}px`)
+      const y = window.scrollY
+      document.documentElement.style.setProperty('--scroll-y', `${y}px`)
+      document.documentElement.style.setProperty('--scroll-n', `${y}`)
     }
     const onScroll = () => {
       cancelAnimationFrame(rafId)

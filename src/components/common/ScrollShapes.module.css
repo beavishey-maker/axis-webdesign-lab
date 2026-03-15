@@ -1,0 +1,191 @@
+/* ─────────────────────────────────────────────────
+   ScrollShapes — lightweight parallax decorations
+   Each .shape is position: fixed, z-index: 1
+   Outer wrapper = scroll parallax via CSS var
+   Inner element = CSS animation (spin / pulse)
+   ───────────────────────────────────────────────── */
+
+.shape {
+  position: fixed;
+  pointer-events: none;
+  z-index: 1;
+  will-change: transform;
+}
+
+/* ─── Shared animations ─── */
+
+@keyframes spinCW {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+@keyframes spinCCW {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(-360deg); }
+}
+@keyframes pulse {
+  0%, 100% { transform: scale(1);    opacity: 0.8; }
+  50%       { transform: scale(1.15); opacity: 1; }
+}
+@keyframes pulseDiamond {
+  0%, 100% { transform: rotate(45deg) scale(1);    opacity: 0.8; }
+  50%       { transform: rotate(45deg) scale(1.12); opacity: 1; }
+}
+@keyframes bob {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-18px); }
+}
+
+/* ══════════════════════════════════
+   1: Large ring — top right
+   parallax: moves UP as user scrolls
+   ══════════════════════════════════ */
+.s1 {
+  top: 8vh;
+  right: -60px;
+  transform: translateY(calc(var(--scroll-y, 0px) * -0.14));
+}
+.s1i {
+  width: 340px;
+  height: 340px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(45, 74, 255, 0.20);
+  animation: spinCW 55s linear infinite;
+}
+
+/* ══════════════════════════════════
+   2: Diamond — mid left
+   parallax: drifts DOWN (slower than scroll)
+   ══════════════════════════════════ */
+.s2 {
+  top: 28vh;
+  left: -25px;
+  transform: translateY(calc(var(--scroll-y, 0px) * 0.09));
+}
+.s2i {
+  width: 170px;
+  height: 170px;
+  background: rgba(255, 45, 120, 0.07);
+  border: 1.5px solid rgba(255, 45, 120, 0.20);
+  animation: pulseDiamond 9s ease-in-out infinite;
+}
+
+/* ══════════════════════════════════
+   3: Hexagon — center right
+   parallax: fast upward, slow spin
+   ══════════════════════════════════ */
+.s3 {
+  top: 50vh;
+  right: 4%;
+  transform: translateY(calc(var(--scroll-y, 0px) * -0.22));
+}
+.s3i {
+  width: 200px;
+  height: 200px;
+  background: rgba(0, 200, 150, 0.08);
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  animation: spinCCW 40s linear infinite;
+}
+
+/* ══════════════════════════════════
+   4: Triangle — lower left
+   parallax: upward + subtle bob
+   ══════════════════════════════════ */
+.s4 {
+  top: 68vh;
+  left: 7%;
+  transform: translateY(calc(var(--scroll-y, 0px) * -0.16));
+}
+.s4i {
+  width: 130px;
+  height: 130px;
+  background: rgba(255, 107, 53, 0.10);
+  clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+  animation: bob 8s ease-in-out infinite;
+}
+
+/* ══════════════════════════════════
+   5: Small circle — top center-ish
+   parallax: medium upward + pulse
+   ══════════════════════════════════ */
+.s5 {
+  top: 18vh;
+  left: 55%;
+  transform: translateY(calc(var(--scroll-y, 0px) * -0.10));
+}
+.s5i {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: rgba(139, 45, 255, 0.10);
+  border: 1.5px solid rgba(139, 45, 255, 0.22);
+  animation: pulse 7s ease-in-out infinite 1.5s;
+}
+
+/* ══════════════════════════════════
+   6: Cross — top left area
+   parallax: slow downward drift
+   ══════════════════════════════════ */
+.s6 {
+  top: 40vh;
+  left: 3%;
+  transform: translateY(calc(var(--scroll-y, 0px) * 0.06))
+             rotate(calc(var(--scroll-n, 0) * 0.02deg));
+}
+.s6i {
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.s6i::before,
+.s6i::after {
+  content: '';
+  position: absolute;
+  background: rgba(0, 212, 255, 0.18);
+  border-radius: 3px;
+}
+.s6i::before { width: 100%; height: 28%; top: 36%; left: 0; }
+.s6i::after  { width: 28%; height: 100%; top: 0; left: 36%; }
+
+/* ══════════════════════════════════
+   7: Medium ring — lower right
+   parallax: fast upward + spin
+   ══════════════════════════════════ */
+.s7 {
+  top: 75vh;
+  right: 10%;
+  transform: translateY(calc(var(--scroll-y, 0px) * -0.28));
+}
+.s7i {
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 45, 120, 0.16);
+  animation: spinCW 35s linear infinite reverse;
+}
+
+/* ══════════════════════════════════
+   8: Square — lower center-left
+   parallax: slow up + scroll-driven rotation
+   ══════════════════════════════════ */
+.s8 {
+  top: 85vh;
+  left: 22%;
+  transform:
+    translateY(calc(var(--scroll-y, 0px) * -0.12))
+    rotate(calc(var(--scroll-n, 0) * 0.025deg));
+}
+.s8i {
+  width: 100px;
+  height: 100px;
+  border: 1.5px solid rgba(45, 74, 255, 0.18);
+  background: rgba(45, 74, 255, 0.05);
+}
+
+/* ─── Reduced motion ─── */
+@media (prefers-reduced-motion: reduce) {
+  .s1i, .s3i, .s7i { animation: none; }
+  .s2i { animation: none; }
+  .s4i, .s5i { animation: none; }
+  .s6  { transform: none; }
+  .s8  { transform: none; }
+}

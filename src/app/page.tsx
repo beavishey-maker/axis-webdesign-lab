@@ -18,7 +18,7 @@ import Footer from '@/components/footer/Footer'
 import CookieConsentLoader from '@/components/common/CookieConsentLoader'
 import PageBlobs from '@/components/common/PageBlobs'
 import ScrollInit from '@/components/common/ScrollInit'
-import ScrollFireworksLoader from '@/components/common/ScrollFireworksLoader'
+import ScrollShapes from '@/components/common/ScrollShapes'
 import worksData from '@/data/works.json'
 import type { Work } from '@/data/types'
 
@@ -31,8 +31,8 @@ export default function HomePage() {
       <ScrollInit />
       {/* Fixed background blobs with parallax */}
       <PageBlobs />
-      {/* Fireworks on scroll */}
-      <ScrollFireworksLoader />
+      {/* Parallax decorative shapes */}
+      <ScrollShapes />
 
       <GlobalGuideBanner />
       <Header />
