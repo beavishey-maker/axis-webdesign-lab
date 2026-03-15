@@ -35,7 +35,8 @@ export default function HomeCover() {
       <div className={styles.HomeCover_content}>
         <HeroCopy />
         <p className={styles.HomeCover_sub}>
-          デザインとテクノロジーの交差点に立つ<br />Webデザインスタジオ
+          Webのことを、もっと自由に考えよう。<br />
+          デザインとテクノロジーで、あなたのビジョンを形にします。
         </p>
         <div className={styles.HomeCover_cta}>
           <Button href="/works" variant="default" size="lg">

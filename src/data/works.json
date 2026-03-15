@@ -37,11 +37,11 @@
   },
   {
     "id": "work-05",
-    "title": "KINGYŌ ニュークラブ公式サイト",
-    "client": "KINGYŌ（仙台・国分町）",
-    "expertise": ["LP制作", "LINE予約連携"],
-    "thumbnail": "/works/cabaret-kingyo.jpg",
-    "href": "https://keen-starlight-4f59dc.netlify.app/",
+    "title": "爪整体 AI健康診断サービス",
+    "client": "nail ebon（爪整体）",
+    "expertise": ["AIチャットボット", "多言語対応", "LP制作"],
+    "thumbnail": "/works/nail-seitai.jpg",
+    "href": "https://nail-ebon.vercel.app/ja",
     "year": 2024
   },
   {
@@ -55,15 +55,6 @@
   },
   {
     "id": "work-07",
-    "title": "爪整体 AI健康診断サービス",
-    "client": "nail ebon（爪整体）",
-    "expertise": ["AIチャットボット", "多言語対応", "LP制作"],
-    "thumbnail": "/works/nail-seitai.jpg",
-    "href": "https://nail-ebon.vercel.app/ja",
-    "year": 2024
-  },
-  {
-    "id": "work-08",
     "title": "アイルビジョン コーポレートサイト",
     "client": "株式会社I'll Vision（仙台・宮城）",
     "expertise": ["コーポレートサイト", "AIチャットボット", "公式LINE"],
@@ -72,7 +63,7 @@
     "year": 2023
   },
   {
-    "id": "work-09",
+    "id": "work-08",
     "title": "LED VISION JAPAN LEDポータル",
     "client": "HaLVision（仙台）",
     "expertise": ["ポータルサイト", "AIチャットボット"],
@@ -81,7 +72,7 @@
     "year": 2023
   },
   {
-    "id": "work-10",
+    "id": "work-09",
     "title": "SENCABA キャバクラ予約サービス",
     "client": "SENCABA（仙台・国分町）",
     "expertise": ["LP制作", "AI接客", "LINE連携"],
@@ -90,7 +81,7 @@
     "year": 2023
   },
   {
-    "id": "work-11",
+    "id": "work-10",
     "title": "鈴木紘一 衆議院議員 公式サイト",
     "client": "鈴木紘一事務所（宮城2区）",
     "expertise": ["コーポレートサイト", "AI問い合わせ"],
@@ -99,7 +90,7 @@
     "year": 2023
   },
   {
-    "id": "work-12",
+    "id": "work-11",
     "title": "佐藤陽子 市議会議員 公式サイト",
     "client": "佐藤陽子事務所（仙台市・青葉区）",
     "expertise": ["コーポレートサイト", "AIチャットボット"],

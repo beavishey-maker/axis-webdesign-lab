@@ -44,11 +44,11 @@ export default function Footer() {
           {/* Logo + Statement */}
           <div className={styles.Footer_brand}>
             <Link href="/" className={styles.Footer_logo} aria-label="Axis Web Design Lab ホーム">
-              <svg width="56" height="28" viewBox="0 0 56 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M8 24L14 4H18L24 24H20.5L19 19H13L11.5 24H8ZM14 16H18L16 9L14 16Z" fill="currentColor"/>
-                <path d="M26 4H30L34 10.5L38 4H42L36 14L42 24H38L34 17.5L30 24H26L32 14L26 4Z" fill="currentColor"/>
-                <path d="M44 4H56V7H48V12.5H55V15.5H48V21H56V24H44V4Z" fill="var(--color-brand)"/>
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M11 1L21 6.5V15.5L11 21L1 15.5V6.5L11 1Z" stroke="var(--color-brand)" strokeWidth="1.5" fill="none"/>
+                <path d="M11 5L7 11L11 17L15 11L11 5Z" fill="var(--color-brand)" opacity="0.9"/>
               </svg>
+              <span className={styles.Footer_logoText}>Axis</span>
             </Link>
             <CompanyStatement theme="default" alignLeft />
           </div>
