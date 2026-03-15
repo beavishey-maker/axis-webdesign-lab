@@ -8,22 +8,28 @@ import IconArrow from '@/components/ui/IconArrow'
 
 const products = [
   {
-    id: 'designkit',
-    title: 'Axis Design Kit',
+    id: 'faq-01',
+    title: 'どんな業種・規模でも対応できますか？',
     description:
-      'Figmaで使えるAxisオリジナルUIコンポーネントキット。400以上のコンポーネントとデザイントークンを収録。',
+      'はい、対応可能です。飲食店・美容室・整体院などの個人商店から、不動産会社・電気工事会社・政治家事務所まで幅広い業種の実績があります。まずはお気軽にご相談ください。',
   },
   {
-    id: 'cssframework',
-    title: 'Axis CSS Framework',
+    id: 'faq-02',
+    title: '最短どれくらいで完成しますか？',
     description:
-      'Tailwindに依存しないネイティブCSSのレイアウトシステム。プリミティブコンポーネントで構成された軽量フレームワーク。',
+      'シンプルなLPであれば最短数日〜1週間で公開可能です。AIチャットボットや公式LINEの連携、管理画面の開発を含む場合は内容に応じてご相談のうえ納期をご提案します。',
   },
   {
-    id: 'dataviz',
-    title: 'Axis Data Viz',
+    id: 'faq-03',
+    title: '公式LINEやAIチャットボットも一緒に頼めますか？',
     description:
-      'React + D3で構築したデータビジュアライゼーションライブラリ。アクセシブルなチャートコンポーネント群。',
+      'もちろんです。Webサイトの制作と同時に、公式LINEの開設・設定やAIチャットボットの構築をセットでご依頼いただけます。問い合わせ対応を自動化したい方にも最適です。',
+  },
+  {
+    id: 'faq-04',
+    title: 'AIを使ったデータ収集サービスとはどういうものですか？',
+    description:
+      'AI診断コンテンツ（爪診断・体質診断・相性診断など）を通じてユーザーにアクションしてもらい、そのデータをビッグデータとして蓄積・分析するサービスです。マーケティングや商品開発への活用も可能です。',
   },
 ]
 
@@ -44,8 +50,8 @@ export default function HomeProductTeaser() {
     >
       <Center>
         <div className={styles.HomeProductTeaser_header}>
-          <Subhead type="small" color="brand">Products</Subhead>
-          <h2 className={styles.HomeProductTeaser_title}>Axis Tools</h2>
+          <Subhead type="small" color="brand">FAQ</Subhead>
+          <h2 className={styles.HomeProductTeaser_title}>よくある質問</h2>
         </div>
 
         <div className={styles.HomeProductTeaser_list} role="list">

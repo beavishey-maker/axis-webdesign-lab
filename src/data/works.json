@@ -1,92 +1,110 @@
 [
   {
     "id": "work-01",
-    "title": "NextTech Corporation コーポレートサイトリニューアル",
-    "client": "NextTech Corporation",
-    "expertise": ["UI/UX Design", "Web Development"],
+    "title": "イナトラ / 虎屋横丁 商店会サイト",
+    "client": "虎屋横丁・稲荷小路親交会（仙台・国分町）",
+    "expertise": ["LP制作", "和モダンデザイン"],
     "thumbnail": "",
-    "href": "/works/nexttech-corp",
+    "href": "https://deluxe-lollipop-605712.netlify.app/",
     "year": 2024
   },
   {
     "id": "work-02",
-    "title": "Lumina Finance ダッシュボードUI設計",
-    "client": "Lumina Finance",
-    "expertise": ["UI/UX Design", "Design System"],
+    "title": "Boulangerie Soleil ベーカリーサイト",
+    "client": "Boulangerie Soleil（東京・麻布十番）",
+    "expertise": ["LP制作", "ブランドデザイン"],
     "thumbnail": "",
-    "href": "/works/lumina-finance",
+    "href": "https://cheery-strudel-31994c.netlify.app/",
     "year": 2024
   },
   {
     "id": "work-03",
-    "title": "GreenPath ブランドアイデンティティ",
-    "client": "GreenPath Inc.",
-    "expertise": ["Brand Identity"],
+    "title": "Café Étoile スペシャルティカフェサイト",
+    "client": "Café Étoile（東京）",
+    "expertise": ["LP制作", "多言語対応"],
     "thumbnail": "",
-    "href": "/works/greenpath",
+    "href": "https://profound-zuccutto-330102.netlify.app/",
     "year": 2024
   },
   {
     "id": "work-04",
-    "title": "Archi Studio ポートフォリオサイト",
-    "client": "Archi Studio",
-    "expertise": ["UI/UX Design", "Web Development"],
+    "title": "NOIR 高級ヘアサロンサイト",
+    "client": "NOIR Hair Salon（東京）",
+    "expertise": ["LP制作", "カスタムアニメーション"],
     "thumbnail": "",
-    "href": "/works/archi-studio",
-    "year": 2023
+    "href": "https://gentle-rolypoly-bceb4e.netlify.app/",
+    "year": 2024
   },
   {
     "id": "work-05",
-    "title": "MedConnect 患者向けアプリUI",
-    "client": "MedConnect",
-    "expertise": ["UI/UX Design"],
+    "title": "KINGYŌ ニュークラブ公式サイト",
+    "client": "KINGYŌ（仙台・国分町）",
+    "expertise": ["LP制作", "LINE予約連携"],
     "thumbnail": "",
-    "href": "/works/medconnect",
-    "year": 2023
+    "href": "https://keen-starlight-4f59dc.netlify.app/",
+    "year": 2024
   },
   {
     "id": "work-06",
-    "title": "Volta EV デザインシステム構築",
-    "client": "Volta EV",
-    "expertise": ["Design System", "Web Development"],
+    "title": "サンライズ不動産 コーポレートサイト",
+    "client": "サンライズ不動産（東京・神奈川・埼玉）",
+    "expertise": ["コーポレートサイト", "物件検索UI"],
     "thumbnail": "",
-    "href": "/works/volta-ev",
-    "year": 2023
+    "href": "https://resilient-cuchufli-8a33fd.netlify.app/",
+    "year": 2024
   },
   {
     "id": "work-07",
-    "title": "Bloom Cosmetics ECサイトリデザイン",
-    "client": "Bloom Cosmetics",
-    "expertise": ["UI/UX Design", "Brand Identity"],
+    "title": "爪整体 AI健康診断サービス",
+    "client": "nail ebon（爪整体）",
+    "expertise": ["AIチャットボット", "多言語対応", "LP制作"],
     "thumbnail": "",
-    "href": "/works/bloom-cosmetics",
-    "year": 2023
+    "href": "https://nail-ebon.vercel.app/ja",
+    "year": 2024
   },
   {
     "id": "work-08",
-    "title": "Stackwise SaaS管理画面UI",
-    "client": "Stackwise",
-    "expertise": ["UI/UX Design", "Design System"],
+    "title": "money web FP・相談サービス",
+    "client": "money web（40〜50代女性向けFP）",
+    "expertise": ["LP制作", "AIチャットボット"],
     "thumbnail": "",
-    "href": "/works/stackwise",
-    "year": 2022
+    "href": "https://moneyweb-react.vercel.app/",
+    "year": 2024
   },
   {
     "id": "work-09",
-    "title": "HorizonBank ウェブバンキングリニューアル",
-    "client": "HorizonBank",
-    "expertise": ["UI/UX Design", "Web Development"],
+    "title": "アイルビジョン コーポレートサイト",
+    "client": "株式会社I'll Vision（仙台・宮城）",
+    "expertise": ["コーポレートサイト", "AIチャットボット", "公式LINE"],
     "thumbnail": "",
-    "href": "/works/horizonbank",
-    "year": 2022
+    "href": "https://illvision.jp/",
+    "year": 2023
   },
   {
     "id": "work-10",
-    "title": "Zenith Music ストリーミングプラットフォーム",
-    "client": "Zenith Music",
-    "expertise": ["UI/UX Design", "Brand Identity", "Web Development"],
+    "title": "LED VISION JAPAN LEDポータル",
+    "client": "HaLVision（仙台）",
+    "expertise": ["ポータルサイト", "AIチャットボット"],
     "thumbnail": "",
-    "href": "/works/zenith-music",
-    "year": 2022
+    "href": "https://halvision.shop/",
+    "year": 2023
+  },
+  {
+    "id": "work-11",
+    "title": "鈴木紘一 衆議院議員 公式サイト",
+    "client": "鈴木紘一事務所（宮城2区）",
+    "expertise": ["コーポレートサイト", "AI問い合わせ"],
+    "thumbnail": "",
+    "href": "https://delightful-speculoos-76dbd6.netlify.app/",
+    "year": 2023
+  },
+  {
+    "id": "work-12",
+    "title": "佐藤陽子 市議会議員 公式サイト",
+    "client": "佐藤陽子事務所（仙台市・青葉区）",
+    "expertise": ["コーポレートサイト", "AIチャットボット"],
+    "thumbnail": "",
+    "href": "https://earnest-centaur-0e8bd6.netlify.app/",
+    "year": 2023
   }
 ]

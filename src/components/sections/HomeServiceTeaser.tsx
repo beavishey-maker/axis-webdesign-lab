@@ -8,36 +8,52 @@ import Button from '@/components/ui/Button'
 
 const services = [
   {
-    id: 'uiux',
-    title: 'UI/UX Design',
+    id: 'lp',
+    title: 'LP・ホームページ制作',
     description:
-      'ユーザーリサーチから始まり、情報設計・インタラクションデザイン・プロトタイピングまで、一気通貫で対応します。',
+      '飲食店・美容室・個人商店のLPを丁寧に仕上げます。ブランドの世界観を大切にしながら、集客・予約につながるデザインを提供します。',
     icon: '◎',
     color: 'var(--color-brand)',
   },
   {
-    id: 'webdev',
-    title: 'Web Development',
+    id: 'corp',
+    title: 'コーポレートサイト',
     description:
-      'Next.js / React をベースに、パフォーマンスとアクセシビリティを両立した高品質なフロントエンドを実装します。',
-    icon: '⌥',
+      '企業・法人の信頼感を伝えるWebサイトを制作します。採用・IR・サービス紹介など目的に応じた設計で、ブランド価値を高めます。',
+    icon: '⊡',
     color: 'var(--color-accent-4)',
   },
   {
-    id: 'brand',
-    title: 'Brand Identity',
+    id: 'admin',
+    title: '管理画面・システム開発',
     description:
-      'ロゴ・カラー・タイポグラフィ・トーン＆マナーを策定し、ブランドの核を視覚言語として定義します。',
+      '予約管理・顧客管理・在庫管理など、業務を効率化する管理画面を開発します。使いやすいUIで現場に馴染むシステムを構築します。',
+    icon: '⌥',
+    color: 'var(--color-accent-3)',
+  },
+  {
+    id: 'line',
+    title: '公式LINE構築・設定',
+    description:
+      'LINE公式アカウントの開設からリッチメニュー設計・自動応答シナリオの構築まで対応。顧客との継続的な接点を整備します。',
     icon: '◈',
     color: 'var(--color-accent-1)',
   },
   {
-    id: 'ds',
-    title: 'Design System',
+    id: 'chatbot',
+    title: 'AIチャットボット開発',
     description:
-      'コンポーネントライブラリとドキュメントを整備し、デザインと開発の一貫性を保つ共通基盤を構築します。',
-    icon: '⊞',
-    color: 'var(--color-accent-3)',
+      '24時間自動で問い合わせ対応できるAIチャットボットを構築します。FAQへの回答から予約誘導まで、業種に合わせてカスタマイズします。',
+    icon: '◉',
+    color: '#00C896',
+  },
+  {
+    id: 'ai-diag',
+    title: 'AI診断・データ活用',
+    description:
+      'AI診断コンテンツを通じてユーザーと接点を持ちながら、ビッグデータを収集・分析するサービスを構築します。各種問診・相性診断などに応用可能です。',
+    icon: '⬡',
+    color: '#FF6B35',
   },
 ]
 

@@ -33,8 +33,14 @@ export default function WorkCard({
     )
   }
 
+  const isExternal = href.startsWith('http')
+
   return (
-    <Link href={href} className={styles.WorkCard}>
+    <Link
+      href={href}
+      className={styles.WorkCard}
+      {...(isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+    >
       <div className={styles.WorkCard_thumbWrap}>
         {thumbnail ? (
           <Image
