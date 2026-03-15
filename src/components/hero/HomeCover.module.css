@@ -34,7 +34,7 @@
   height: 100%;
   object-fit: cover;
   z-index: 1;
-  animation: videoFadeOut 5.5s ease-in-out 0.3s forwards;
+  animation: videoFadeOut 5.5s ease-in-out 3.3s forwards;
 }
 
 /* Remove dark overlay — bright hero needs light */
@@ -75,7 +75,7 @@
   color: var(--color-text-muted);
   line-height: 1.8;
   opacity: 0;
-  animation: fadeInUp 0.8s ease 1.2s forwards;
+  animation: fadeInUp 0.8s ease 9.2s forwards;
   will-change: opacity, transform;
 }
 
@@ -85,7 +85,7 @@
   gap: var(--space-4);
   margin-top: var(--space-7);
   opacity: 0;
-  animation: fadeInUp 0.8s ease 1.5s forwards;
+  animation: fadeInUp 0.8s ease 9.6s forwards;
 }
 
 /* ── Scroll indicator ── */
@@ -100,7 +100,7 @@
   align-items: center;
   gap: var(--space-2);
   opacity: 0;
-  animation: fadeIn 1s ease 2s forwards;
+  animation: fadeIn 1s ease 10.2s forwards;
 }
 
 .HomeCover_scrollDot {
