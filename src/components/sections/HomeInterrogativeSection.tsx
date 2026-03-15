@@ -11,18 +11,21 @@ const items = [
     answer: 'Axisに頼む理由',
     description:
       'デザインの美しさと実装の技術を両立するスタジオだから、見た目も動きも妥協しません。個人商店から企業まで、丁寧にヒアリングして世界観を形にします。',
+    color: '#2D4AFF',
   },
   {
     question: 'How',
     answer: 'どのように進めるか',
     description:
       'ヒアリング → デザイン提案 → 実装 → 公開という流れで迅速に進めます。LPなら最短数日、AIチャットボットやLINE連携も一括でお任せください。',
+    color: '#FF2D78',
   },
   {
     question: 'What',
     answer: '何を提供するか',
     description:
       'LP・コーポレートサイト・管理画面・公式LINE・AIチャットボット・AI診断サービスまで、Webに関わるすべてをワンストップで提供します。',
+    color: '#00C896',
   },
 ]
 
@@ -45,7 +48,7 @@ export default function HomeInterrogativeSection() {
             <div
               key={item.question}
               className={styles.HomeInterrogative_item}
-              style={{ transitionDelay: `${i * 0.1}s` }}
+              style={{ ['--item-color' as string]: item.color, transitionDelay: `${i * 0.1}s` }}
             >
               <span className={styles.HomeInterrogative_question}>{item.question}</span>
               <h3 className={styles.HomeInterrogative_answer}>{item.answer}</h3>

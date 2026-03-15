@@ -85,7 +85,7 @@ export default function HomeServiceTeaser() {
             <div
               key={service.id}
               className={styles.HomeServiceTeaser_card}
-              style={{ transitionDelay: `${i * 0.1}s` }}
+              style={{ ['--service-color' as string]: service.color, transitionDelay: `${i * 0.1}s` }}
             >
               <div
                 className={styles.HomeServiceTeaser_icon}

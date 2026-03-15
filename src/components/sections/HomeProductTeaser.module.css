@@ -1,5 +1,9 @@
 .HomeProductTeaser {
   padding: var(--space-10) 0;
+  background:
+    radial-gradient(ellipse 55% 40% at 90% 15%, rgba(45,74,255,0.05) 0%, transparent 60%),
+    radial-gradient(ellipse 45% 45% at 5% 85%, rgba(255,45,120,0.04) 0%, transparent 55%),
+    var(--color-bg-white);
 }
 
 .HomeProductTeaser_header {
@@ -18,6 +22,7 @@
   display: flex;
   flex-direction: column;
   border-top: 1px solid var(--color-border);
+  counter-reset: faq;
 }
 
 @keyframes fadeInLeft {
@@ -27,7 +32,15 @@
 
 .HomeProductTeaser_item {
   border-bottom: 1px solid var(--color-border);
+  border-left: 3px solid transparent;
+  padding-left: var(--space-4);
   opacity: 0;
+  counter-increment: faq;
+  transition: border-left-color 0.3s ease;
+}
+
+.HomeProductTeaser_item:hover {
+  border-left-color: var(--color-brand);
 }
 
 .HomeProductTeaser--visible .HomeProductTeaser_item {
@@ -44,6 +57,17 @@
   gap: var(--space-4);
 }
 
+.HomeProductTeaser_toggle::before {
+  content: "0" counter(faq);
+  font-family: var(--font-heading);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--color-brand);
+  letter-spacing: 0.05em;
+  flex-shrink: 0;
+  opacity: 0.7;
+}
+
 .HomeProductTeaser_toggle:hover .HomeProductTeaser_itemTitle {
   color: var(--color-brand);
 }
@@ -54,6 +78,7 @@
   font-weight: 600;
   color: var(--color-text);
   transition: color var(--transition-fast);
+  flex: 1;
 }
 
 .HomeProductTeaser_arrow {

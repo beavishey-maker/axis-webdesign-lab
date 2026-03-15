@@ -35,28 +35,17 @@ export default function HomeCover() {
       {done && (
         <>
           <div className={styles.HomeCover_content}>
-            <div className={styles.HomeCover_text}>
-              <HeroCopy />
-              <p className={styles.HomeCover_sub}>
-                デザインとテクノロジーの交差点に立つ<br />Webデザインスタジオ
-              </p>
-              <div className={styles.HomeCover_cta}>
-                <Button href="/works" variant="default" size="lg">
-                  実績を見る
-                </Button>
-                <Button href="/contact" variant="outline" size="lg">
-                  相談する
-                </Button>
-              </div>
-            </div>
-            <div className={styles.HomeCover_visual} aria-hidden="true">
-              <Image
-                src="/6.png"
-                alt=""
-                fill
-                className={styles.HomeCover_visualImg}
-                priority
-              />
+            <HeroCopy />
+            <p className={styles.HomeCover_sub}>
+              デザインとテクノロジーの交差点に立つ<br />Webデザインスタジオ
+            </p>
+            <div className={styles.HomeCover_cta}>
+              <Button href="/works" variant="default" size="lg">
+                実績を見る
+              </Button>
+              <Button href="/contact" variant="outline" size="lg">
+                相談する
+              </Button>
             </div>
           </div>
 

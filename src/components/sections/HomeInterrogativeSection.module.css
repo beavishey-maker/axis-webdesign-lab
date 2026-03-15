@@ -1,16 +1,60 @@
 .HomeInterrogative {
   padding: var(--space-10) 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.HomeInterrogative::before {
+  content: '';
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(45,74,255,0.07) 0%, transparent 70%);
+  top: -150px;
+  right: -150px;
+  animation: floatA 9s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.HomeInterrogative::after {
+  content: '';
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0,200,150,0.07) 0%, transparent 70%);
+  bottom: -100px;
+  left: -100px;
+  animation: floatB 11s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes floatA {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-30px) scale(1.08); }
+}
+
+@keyframes floatB {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(25px) scale(0.92); }
 }
 
 .HomeInterrogative_label {
   display: block;
   margin-bottom: var(--space-7);
+  position: relative;
+  z-index: 1;
 }
 
 .HomeInterrogative_grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--space-6);
+  position: relative;
+  z-index: 1;
 }
 
 @media (min-width: 768px) {
@@ -28,14 +72,15 @@
 .HomeInterrogative_item {
   padding: var(--space-7);
   background: var(--color-bg-white);
-  border-radius: 16px;
+  border-radius: 4px;
   border: 1px solid var(--color-border);
+  border-left: 4px solid var(--item-color, var(--color-brand));
   opacity: 0;
   transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 .HomeInterrogative_item:hover {
-  box-shadow: 0 12px 40px rgba(45,74,255,0.12);
+  box-shadow: 0 12px 40px color-mix(in srgb, var(--item-color, var(--color-brand)) 18%, transparent);
   transform: translateY(-4px);
 }
 
@@ -48,10 +93,10 @@
   font-family: var(--font-heading);
   font-size: 3rem;
   font-weight: 700;
-  color: var(--color-brand);
+  color: var(--item-color, var(--color-brand));
   line-height: 1;
   margin-bottom: var(--space-4);
-  opacity: 0.15;
+  opacity: 0.3;
 }
 
 .HomeInterrogative_answer {
