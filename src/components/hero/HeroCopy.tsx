@@ -12,7 +12,7 @@ const DIRS: Array<[number, number]> = [
 ]
 
 const lines = [
-  { words: ['Web', 'を、'] },
+  { words: ['WEB'] },
   { words: ['もっと'] },
   { words: ['自由に。'] },
 ]
@@ -21,7 +21,7 @@ export default function HeroCopy() {
   let letterIndex = 0
 
   return (
-    <h1 className={styles.HeroCopy} aria-label="Web を、もっと 自由に。">
+    <h1 className={styles.HeroCopy} aria-label="WEB もっと 自由に。">
       {lines.map((line, li) => (
         <span key={li} className={styles.HeroCopy_line}>
           {line.words.map((word, wi) => (
