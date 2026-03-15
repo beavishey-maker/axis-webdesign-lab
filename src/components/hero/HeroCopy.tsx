@@ -23,7 +23,7 @@ export default function HeroCopy() {
               <span
                 key={wi}
                 className={styles.HeroCopy_word}
-                style={{ animationDelay: `${delay + 9.0}s` }}
+                style={{ animationDelay: `${delay + 0.1}s` }}
               >
                 {words}
                 {isPeriodLine && (
