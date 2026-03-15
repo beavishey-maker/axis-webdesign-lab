@@ -1,4 +1,6 @@
-/* ─── Hero ─── */
+/* ═══════════════════════════════
+   Hero
+═══════════════════════════════ */
 .hero {
   position: relative;
   min-height: 100svh;
@@ -21,8 +23,8 @@
   z-index: 1;
   background: radial-gradient(
     ellipse 80% 90% at 50% 60%,
-    rgba(5, 6, 15, 0.5) 0%,
-    rgba(5, 6, 15, 0.85) 60%,
+    rgba(5, 6, 15, 0.45) 0%,
+    rgba(5, 6, 15, 0.82) 60%,
     #05060f 100%
   );
 }
@@ -31,129 +33,141 @@
   position: relative;
   z-index: 2;
   text-align: center;
-  padding: var(--space-16) 0 var(--space-10);
-  max-width: 760px;
+  padding: 140px 0 80px;
+  max-width: 800px;
   margin: 0 auto;
 }
 
 .heroBadge {
   display: inline-block;
-  padding: 4px 16px;
+  padding: 5px 18px;
   border-radius: 999px;
-  background: rgba(192, 132, 252, 0.15);
-  border: 1px solid rgba(192, 132, 252, 0.4);
-  color: #c084fc;
+  background: rgba(124, 58, 237, 0.15);
+  border: 1px solid rgba(124, 58, 237, 0.4);
+  color: #a78bfa;
   font-size: 0.68rem;
   font-weight: 700;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  margin-bottom: var(--space-5);
+  margin-bottom: 28px;
 }
 
 .heroTitle {
   font-family: var(--font-heading);
-  font-size: clamp(3.5rem, 12vw, 9rem);
+  font-size: clamp(3.2rem, 11vw, 8rem);
   font-weight: 900;
-  line-height: 0.95;
+  line-height: 1;
   letter-spacing: -0.04em;
   color: #fff;
-  margin: 0 0 var(--space-5);
+  margin: 0 0 20px;
   display: flex;
   align-items: baseline;
   justify-content: center;
-  gap: 0.15em;
+  gap: 0.12em;
   flex-wrap: wrap;
 }
 
 .heroTitlePurple {
-  color: #c084fc;
-  text-shadow:
-    0 0 40px rgba(192, 132, 252, 0.8),
-    0 0 100px rgba(192, 132, 252, 0.4);
+  color: #a78bfa;
+  text-shadow: 0 0 50px rgba(167, 139, 250, 0.6);
 }
 
 .heroTitleSep {
-  color: rgba(255,255,255,0.3);
-  font-size: 0.6em;
+  color: rgba(255,255,255,0.2);
+  font-size: 0.55em;
+  font-weight: 300;
 }
 
 .heroTagline {
   font-family: var(--font-heading);
-  font-size: clamp(1.1rem, 3vw, 1.6rem);
-  font-weight: 700;
-  color: rgba(255,255,255,0.85);
-  letter-spacing: 0.06em;
-  margin: 0 0 var(--space-5);
+  font-size: clamp(1rem, 2.5vw, 1.4rem);
+  font-weight: 600;
+  color: rgba(255,255,255,0.7);
+  letter-spacing: 0.08em;
+  margin: 0 0 16px;
 }
 
 .heroSub {
-  font-size: clamp(0.88rem, 2vw, 1rem);
-  line-height: 1.95;
-  color: rgba(255,255,255,0.55);
-  margin: 0 auto var(--space-8);
-  max-width: 540px;
+  font-size: 0.95rem;
+  line-height: 1.9;
+  color: rgba(255,255,255,0.45);
+  margin: 0 auto 36px;
+  max-width: 520px;
 }
 
 .heroCta {
   display: flex;
-  gap: var(--space-3);
+  gap: 12px;
   justify-content: center;
   flex-wrap: wrap;
 }
 
-/* ─── Shared ─── */
+/* ═══════════════════════════════
+   Shared section scaffolding
+═══════════════════════════════ */
 .section {
-  padding: var(--space-16) 0;
-  background: var(--color-bg-white);
+  padding: clamp(64px, 8vw, 100px) 0;
+  background: #fff;
 }
 
-.sectionDark {
-  padding: var(--space-16) 0;
-  background: #05060f;
+.sectionAlt {
+  padding: clamp(64px, 8vw, 100px) 0;
+  background: #f8f5ff;
 }
 
-.subhead {
-  margin-bottom: var(--space-2) !important;
+/* Section label — replaces the old <Subhead> */
+.sectionLabel {
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #7c3aed;
+  border-left: 3px solid #7c3aed;
+  padding-left: 10px;
+  margin-bottom: 12px;
+  line-height: 1;
 }
 
+/* Section title — tighter, more editorial */
 .sectionTitle {
   font-family: var(--font-heading);
-  font-size: clamp(1.8rem, 5vw, 3rem);
+  font-size: clamp(1.5rem, 3.5vw, 2.2rem);
   font-weight: 800;
-  color: var(--color-text);
-  margin: 0 0 var(--space-10);
+  color: #111;
   letter-spacing: -0.03em;
+  margin: 0 0 48px;
+  line-height: 1.2;
 }
 
-.sectionTitleLight {
-  font-family: var(--font-heading);
-  font-size: clamp(1.8rem, 5vw, 3rem);
-  font-weight: 800;
-  color: #fff;
-  margin: 0 0 var(--space-10);
-  letter-spacing: -0.03em;
-}
-
-/* ─── Win-Win Merits ─── */
-.meritsGrid {
+/* ═══════════════════════════════
+   Win-Win: full-width split panels
+═══════════════════════════════ */
+.meritsRow {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: var(--space-6);
+  grid-template-columns: 1fr 1fr;
+  margin-top: 0;
 }
 
-.meritCard {
-  padding: var(--space-7);
-  border-radius: 4px;
-  border-top: 4px solid var(--mc, var(--color-brand));
-  background: var(--color-bg);
+@media (max-width: 700px) {
+  .meritsRow { grid-template-columns: 1fr; }
+}
+
+.meritPanel {
+  padding: clamp(36px, 5vw, 60px) clamp(24px, 4vw, 48px);
+  background: color-mix(in srgb, var(--mc, #7c3aed) 6%, #fff);
+  border-top: 4px solid var(--mc, #7c3aed);
+}
+
+.meritPanel:first-child {
+  border-right: 1px solid rgba(0,0,0,0.06);
 }
 
 .meritTitle {
   font-family: var(--font-heading);
-  font-size: 1.15rem;
+  font-size: 1.05rem;
   font-weight: 700;
-  color: var(--color-text);
-  margin: 0 0 var(--space-5);
+  color: var(--mc, #7c3aed);
+  margin: 0 0 20px;
 }
 
 .meritList {
@@ -162,23 +176,32 @@
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: var(--space-3);
+  gap: 14px;
 }
 
 .meritItem {
   display: flex;
-  gap: var(--space-3);
+  gap: 12px;
   align-items: flex-start;
   font-size: 0.9rem;
-  color: var(--color-text-muted);
+  color: #444;
   line-height: 1.6;
 }
 
-/* ─── Steps ─── */
+.meritIcon {
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* ═══════════════════════════════
+   Steps: numbered circles + flow
+═══════════════════════════════ */
 .steps {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-5);
+  gap: 0;
+  position: relative;
 }
 
 @media (max-width: 700px) {
@@ -186,84 +209,132 @@
 }
 
 .step {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.07);
-  border-top: 3px solid var(--sc, var(--color-brand));
-  border-radius: 4px;
-  padding: var(--space-6);
+  position: relative;
+  padding: 0 32px 0 0;
+  display: flex;
+  flex-direction: column;
 }
 
-.stepNum {
+.step:last-child { padding-right: 0; }
+
+/* Large numbered circle */
+.stepCircle {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--sc, #7c3aed);
+  color: #fff;
   font-family: var(--font-heading);
-  font-size: 3rem;
+  font-size: 1rem;
   font-weight: 900;
-  color: var(--sc, var(--color-brand));
-  opacity: 0.22;
-  line-height: 1;
-  margin-bottom: var(--space-3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* Arrow between steps */
+.stepArrow {
+  position: absolute;
+  top: 26px;
+  right: -4px;
+  width: 28px;
+  height: 2px;
+  background: #ddd;
+  z-index: 0;
+}
+
+.stepArrow::after {
+  content: '';
+  position: absolute;
+  right: -1px;
+  top: -4px;
+  border: 5px solid transparent;
+  border-left-color: #ddd;
+}
+
+@media (max-width: 700px) {
+  .stepArrow { display: none; }
+  .step { padding: 0 0 32px 0; }
 }
 
 .stepTitle {
   font-family: var(--font-heading);
-  font-size: 1.05rem;
+  font-size: 1rem;
   font-weight: 700;
-  color: #fff;
-  margin: 0 0 var(--space-2);
+  color: #111;
+  margin: 0 0 10px;
 }
 
 .stepDesc {
   font-size: 0.875rem;
   line-height: 1.75;
-  color: rgba(255,255,255,0.5);
+  color: #666;
   margin: 0;
 }
 
-/* ─── Use Cases ─── */
+/* ═══════════════════════════════
+   Use Cases grid
+═══════════════════════════════ */
 .casesGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: var(--space-5);
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: #e5e5e5;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+@media (max-width: 800px) {
+  .casesGrid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 500px) {
+  .casesGrid { grid-template-columns: 1fr; }
 }
 
 .caseCard {
-  padding: var(--space-6);
-  border-radius: 4px;
-  border-left: 4px solid var(--cc, var(--color-brand));
-  background: var(--color-bg);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  padding: 28px 24px;
+  background: #fff;
+  transition: background 0.2s ease;
 }
 
 .caseCard:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 28px color-mix(in srgb, var(--cc, var(--color-brand)) 18%, transparent);
+  background: color-mix(in srgb, var(--cc, #7c3aed) 5%, #fff);
 }
 
 .caseIcon {
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   display: block;
-  margin-bottom: var(--space-3);
+  margin-bottom: 10px;
 }
 
 .caseTitle {
   font-family: var(--font-heading);
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   font-weight: 700;
-  color: var(--color-text);
-  margin: 0 0 var(--space-2);
+  color: #111;
+  margin: 0 0 8px;
 }
 
 .caseDesc {
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   line-height: 1.7;
-  color: var(--color-text-muted);
+  color: #777;
   margin: 0;
 }
 
-/* ─── Case Study ─── */
+/* ═══════════════════════════════
+   Case Study
+═══════════════════════════════ */
 .caseStudy {
   display: grid;
   grid-template-columns: auto 1fr;
-  gap: clamp(var(--space-8), 6vw, var(--space-14));
+  gap: clamp(36px, 6vw, 72px);
   align-items: center;
 }
 
@@ -277,15 +348,14 @@
 }
 
 .caseStudyPhone {
-  width: 230px;
-  background: #0a0b14;
+  width: 240px;
+  background: #1a1a2e;
   border-radius: 28px;
   overflow: hidden;
-  border: 2px solid rgba(192, 132, 252, 0.25);
+  border: 2px solid rgba(124, 58, 237, 0.2);
   box-shadow:
-    0 0 0 6px rgba(192, 132, 252, 0.06),
-    0 20px 60px rgba(0, 0, 0, 0.6),
-    0 0 80px rgba(192, 132, 252, 0.2);
+    0 20px 60px rgba(100, 60, 180, 0.12),
+    0 4px 20px rgba(0, 0, 0, 0.1);
   transform: rotate(-2deg);
   transition: transform 0.4s ease;
 }
@@ -296,7 +366,7 @@
 
 .caseStudyPhoneBar {
   height: 26px;
-  background: #080910;
+  background: #12122a;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -306,7 +376,7 @@
 .caseStudyPhoneCamera {
   width: 56px;
   height: 8px;
-  background: #16182a;
+  background: #1e1e3a;
   border-radius: 999px;
 }
 
@@ -323,42 +393,43 @@
 }
 
 .caseStudyContent {
-  color: #fff;
+  color: #111;
 }
 
 .caseStudyBadge {
   display: inline-block;
-  padding: 3px 12px;
+  padding: 4px 12px;
   border-radius: 999px;
-  background: rgba(192, 132, 252, 0.15);
-  border: 1px solid rgba(192, 132, 252, 0.4);
-  color: #c084fc;
+  background: rgba(124, 58, 237, 0.08);
+  border: 1px solid rgba(124, 58, 237, 0.25);
+  color: #7c3aed;
   font-size: 0.68rem;
   font-weight: 700;
   letter-spacing: 0.1em;
-  margin-bottom: var(--space-4);
+  margin-bottom: 16px;
 }
 
 .caseStudyTitle {
   font-family: var(--font-heading);
-  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  font-size: clamp(1.4rem, 3.5vw, 2rem);
   font-weight: 800;
   line-height: 1.25;
   letter-spacing: -0.03em;
-  margin: 0 0 var(--space-4);
+  margin: 0 0 16px;
+  color: #111;
 }
 
 .caseStudyDesc {
   font-size: 0.9rem;
   line-height: 1.85;
-  color: rgba(255,255,255,0.55);
-  margin: 0 0 var(--space-6);
+  color: #666;
+  margin: 0 0 24px;
 }
 
 .caseStudyStats {
   display: flex;
-  gap: var(--space-6);
-  margin-bottom: var(--space-6);
+  gap: 28px;
+  margin-bottom: 24px;
   flex-wrap: wrap;
 }
 
@@ -370,111 +441,113 @@
 
 .caseStudyStat span {
   font-family: var(--font-heading);
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   font-weight: 800;
-  color: #c084fc;
+  color: #7c3aed;
   line-height: 1;
 }
 
 .caseStudyStat small {
   font-size: 0.7rem;
-  color: rgba(255,255,255,0.4);
+  color: #999;
 }
 
-/* ─── Features ─── */
+/* ═══════════════════════════════
+   Features
+═══════════════════════════════ */
 .featuresGrid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: var(--space-5);
+  gap: 2px;
+  background: #e8e8e8;
+  border: 1px solid #e8e8e8;
+  border-radius: 4px;
+  overflow: hidden;
 }
 
 .featureCard {
-  padding: var(--space-6);
-  border-radius: 4px;
-  background: var(--color-bg);
-  border-bottom: 2px solid transparent;
-  transition: border-color 0.2s ease, transform 0.2s ease;
+  padding: 28px 24px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
-.featureCard:hover {
-  border-bottom-color: #c084fc;
-  transform: translateY(-2px);
-}
-
-.featureNum {
-  font-family: var(--font-heading);
-  font-size: 2.5rem;
-  font-weight: 900;
-  color: #c084fc;
-  opacity: 0.2;
-  line-height: 1;
-  margin-bottom: var(--space-2);
+.featureDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--fc, #7c3aed);
+  flex-shrink: 0;
+  margin-bottom: 4px;
 }
 
 .featureTitle {
   font-family: var(--font-heading);
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 700;
-  color: var(--color-text);
-  margin: 0 0 var(--space-2);
-}
-
-.featureDesc {
-  font-size: 0.875rem;
-  line-height: 1.75;
-  color: var(--color-text-muted);
+  color: #111;
   margin: 0;
 }
 
-/* ─── Plans ─── */
+.featureDesc {
+  font-size: 0.85rem;
+  line-height: 1.75;
+  color: #777;
+  margin: 0;
+}
+
+/* ═══════════════════════════════
+   Pricing
+═══════════════════════════════ */
 .plansGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: var(--space-5);
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
   align-items: start;
-  margin-bottom: var(--space-6);
+  margin-bottom: 20px;
+}
+
+@media (max-width: 860px) {
+  .plansGrid { grid-template-columns: 1fr; max-width: 440px; }
 }
 
 .planCard {
   position: relative;
-  padding: var(--space-7) var(--space-6);
+  padding: 32px 28px;
   border-radius: 4px;
-  border-top: 4px solid var(--pc, var(--color-brand));
-  background: rgba(255,255,255,0.04);
-  border-left: 1px solid rgba(255,255,255,0.06);
-  border-right: 1px solid rgba(255,255,255,0.06);
-  border-bottom: 1px solid rgba(255,255,255,0.06);
+  border: 1px solid #e5e5e5;
+  border-top: 4px solid var(--pc, #7c3aed);
+  background: #fff;
   display: flex;
   flex-direction: column;
-  gap: var(--space-4);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  gap: 16px;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
 
 .planCard:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 40px color-mix(in srgb, var(--pc, var(--color-brand)) 18%, transparent);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 36px rgba(0,0,0,0.08);
 }
 
 .planCard--featured {
-  background: rgba(192, 132, 252, 0.06);
-  border-color: rgba(192, 132, 252, 0.3);
-  border-top-color: #c084fc;
-  transform: scale(1.03);
-  box-shadow: 0 8px 40px rgba(192, 132, 252, 0.2);
+  border-color: var(--pc, #7c3aed);
+  box-shadow: 0 8px 32px color-mix(in srgb, var(--pc, #7c3aed) 20%, transparent);
+  transform: translateY(-4px);
 }
 
 .planCard--featured:hover {
-  transform: scale(1.03) translateY(-4px);
+  transform: translateY(-7px);
 }
 
 .planBadge {
   position: absolute;
-  top: -14px;
+  top: -13px;
   left: 50%;
   transform: translateX(-50%);
-  background: #c084fc;
+  background: var(--pc, #7c3aed);
   color: #fff;
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   font-weight: 700;
   padding: 3px 12px;
   border-radius: 999px;
@@ -482,25 +555,27 @@
 }
 
 .planName {
-  font-family: var(--font-heading);
-  font-size: 0.95rem;
+  font-size: 0.75rem;
   font-weight: 700;
-  color: rgba(255,255,255,0.5);
-  letter-spacing: 0.06em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #999;
 }
 
 .planPrice {
   font-family: var(--font-heading);
-  font-size: 2.2rem;
+  font-size: 2rem;
   font-weight: 900;
-  color: #fff;
+  color: #111;
   line-height: 1;
+  border-bottom: 1px solid #f0f0f0;
+  padding-bottom: 16px;
 }
 
 .planNote {
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   font-weight: 400;
-  color: rgba(255,255,255,0.4);
+  color: #aaa;
   margin-left: 4px;
 }
 
@@ -510,63 +585,71 @@
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: var(--space-2);
+  gap: 10px;
   flex: 1;
 }
 
 .planFeature {
   font-size: 0.85rem;
-  color: rgba(255,255,255,0.55);
+  color: #555;
   display: flex;
-  gap: var(--space-2);
+  gap: 8px;
   align-items: baseline;
+  line-height: 1.5;
 }
 
 .planFeature span {
-  color: var(--pc, var(--color-brand));
+  color: var(--pc, #7c3aed);
   font-weight: 700;
-  font-size: 0.75rem;
+  font-size: 0.8rem;
+  flex-shrink: 0;
 }
 
 .plansNote {
-  font-size: 0.8rem;
-  color: rgba(255,255,255,0.35);
+  font-size: 0.78rem;
+  color: #aaa;
   text-align: center;
 }
 
-/* ─── FAQ ─── */
+/* ═══════════════════════════════
+   FAQ
+═══════════════════════════════ */
 .faqList {
-  max-width: 720px;
+  max-width: 680px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: var(--space-5);
 }
 
 .faqItem {
-  border-bottom: 1px solid rgba(0,0,0,0.08);
-  padding-bottom: var(--space-5);
+  border-bottom: 1px solid #eee;
+  padding: 24px 0;
 }
+
+.faqItem:first-child { padding-top: 0; }
 
 .faqQ {
   font-family: var(--font-heading);
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 700;
-  color: var(--color-text);
-  margin: 0 0 var(--space-3);
+  color: #111;
+  margin: 0 0 10px;
+  padding-left: 16px;
+  border-left: 3px solid #7c3aed;
 }
 
 .faqA {
-  font-size: 0.9rem;
-  line-height: 1.8;
-  color: var(--color-text-muted);
+  font-size: 0.875rem;
+  line-height: 1.85;
+  color: #666;
   margin: 0;
+  padding-left: 16px;
 }
 
+/* ═══════════════════════════════
+   Responsive
+═══════════════════════════════ */
 @media (max-width: 640px) {
   .heroCta { flex-direction: column; align-items: center; }
-  .plansGrid { grid-template-columns: 1fr; }
-  .planCard--featured { transform: none; }
-  .planCard--featured:hover { transform: translateY(-4px); }
-  .heroTitle { flex-direction: column; gap: 0; }
+  .heroTitle { flex-direction: column; gap: 4px; text-align: center; }
 }

@@ -4,7 +4,6 @@ import Header from '@/components/header/Header'
 import Footer from '@/components/footer/Footer'
 import FooterCTA from '@/components/footer/FooterCTA'
 import Center from '@/components/layout/Center'
-import Subhead from '@/components/ui/Subhead'
 import Button from '@/components/ui/Button'
 import AIDiagHeroClient from './AIDiagHeroClient'
 import styles from './page.module.css'
@@ -25,7 +24,7 @@ const merits = [
       { icon: '📊', text: 'スコアと経過の可視化' },
       { icon: '🌐', text: '多言語対応で世界中から利用可能' },
     ],
-    color: '#00D4FF',
+    color: '#00b4d8',
   },
   {
     side: 'biz',
@@ -36,7 +35,7 @@ const merits = [
       { icon: '🔄', text: 'CRM・LINE・メール自動連携' },
       { icon: '📉', text: '問い合わせ対応コストの削減' },
     ],
-    color: '#c084fc',
+    color: '#7c3aed',
   },
 ]
 
@@ -45,45 +44,45 @@ const steps = [
     num: '01',
     title: '診断コンテンツ設計',
     desc: 'ターゲット・目的・収集したいデータ項目をヒアリング。質問設計からUI/UXまで一気通貫で構築します。',
-    color: '#c084fc',
+    color: '#7c3aed',
   },
   {
     num: '02',
     title: '診断を公開・拡散',
     desc: 'WebサイトへのLP組み込み・SNSシェア設計・LINE連携など、最大数のユーザーに届けるフローを整備します。',
-    color: '#00D4FF',
+    color: '#00b4d8',
   },
   {
     num: '03',
-    title: 'データ収集・分析・活用',
-    desc: 'スプレッドシート・CRM・ダッシュボードへ自動連携。蓄積データでマーケ施策・商品開発に活かします。',
-    color: '#00E87A',
+    title: 'データ収集・活用',
+    desc: 'スプレッドシート・CRM・ダッシュボードへ自動連携。蓄積データをマーケ施策・商品開発に活かします。',
+    color: '#059669',
   },
 ]
 
 const useCases = [
-  { icon: '💅', title: '美容・ヘルスケア', desc: '爪・肌・髪・体型診断。結果に連動した商品提案でコンバージョン向上。', color: '#c084fc' },
-  { icon: '🍽', title: '飲食・栄養', desc: '食習慣・体質診断からパーソナルメニューを提案。リピーター獲得に直結。', color: '#FF6B35' },
-  { icon: '🏠', title: '不動産・インテリア', desc: 'ライフスタイル診断で理想の物件・部屋スタイルを提案。成約率UP。', color: '#FFD900' },
-  { icon: '👗', title: 'ファッション', desc: 'パーソナルカラー・骨格診断から似合うアイテムを自動レコメンド。', color: '#FF2D78' },
-  { icon: '🏥', title: '医療・クリニック', desc: '症状問診票のデジタル化。来院前データで診察効率を大幅改善。', color: '#00D4FF' },
-  { icon: '📚', title: '教育・スクール', desc: '学習スタイル・目標診断で最適なコースを提案。入学率向上。', color: '#00E87A' },
+  { icon: '💅', title: '美容・ヘルスケア', desc: '爪・肌・髪・体型診断。結果に連動した商品提案でコンバージョン向上。', color: '#7c3aed' },
+  { icon: '🍽', title: '飲食・栄養', desc: '食習慣・体質診断からパーソナルメニューを提案。リピーター獲得に直結。', color: '#f97316' },
+  { icon: '🏠', title: '不動産・インテリア', desc: 'ライフスタイル診断で理想の物件・部屋スタイルを提案。成約率UP。', color: '#d97706' },
+  { icon: '👗', title: 'ファッション', desc: 'パーソナルカラー・骨格診断から似合うアイテムを自動レコメンド。', color: '#db2777' },
+  { icon: '🏥', title: '医療・クリニック', desc: '症状問診票のデジタル化。来院前データで診察効率を大幅改善。', color: '#00b4d8' },
+  { icon: '📚', title: '教育・スクール', desc: '学習スタイル・目標診断で最適なコースを提案。入学率向上。', color: '#059669' },
 ]
 
 const features = [
-  { title: 'マルチステップ診断', desc: 'ユーザーが飽きないよう、段階的な質問フローをカスタム設計します。' },
-  { title: 'AI回答エンジン', desc: '回答パターンをAIで分析し、最適な診断結果を動的に生成します。' },
-  { title: '多言語対応', desc: '日本語・英語・アラビア語など多言語に対応。インバウンド・海外展開も視野に。' },
-  { title: 'リアルタイムデータ連携', desc: 'Googleスプレッドシート・HubSpot・Notion等へ診断データを即時転送。' },
-  { title: 'LINE / メール連携', desc: '診断後にLINEで結果通知、フォローアップメッセージを自動配信。' },
-  { title: 'ダッシュボード', desc: '回答傾向・属性分布・日別推移をビジュアル化したレポート画面を提供。' },
+  { title: 'マルチステップ診断', desc: 'ユーザーが飽きないよう、段階的な質問フローをカスタム設計します。', color: '#7c3aed' },
+  { title: 'AI回答エンジン', desc: '回答パターンをAIで分析し、最適な診断結果を動的に生成します。', color: '#00b4d8' },
+  { title: '多言語対応', desc: '日本語・英語・アラビア語など多言語に対応。インバウンド・海外展開も視野に。', color: '#059669' },
+  { title: 'リアルタイムデータ連携', desc: 'Googleスプレッドシート・HubSpot・Notion等へ診断データを即時転送。', color: '#f97316' },
+  { title: 'LINE / メール連携', desc: '診断後にLINEで結果通知、フォローアップメッセージを自動配信。', color: '#db2777' },
+  { title: 'ダッシュボード', desc: '回答傾向・属性分布・日別推移をビジュアル化したレポート画面を提供。', color: '#d97706' },
 ]
 
 const plans = [
   {
     name: 'スターター',
     price: '¥89,800',
-    note: '税込 〜',
+    note: '税込〜',
     features: [
       '診断項目：最大15問',
       '結果パターン：最大8種',
@@ -91,12 +90,13 @@ const plans = [
       '多言語：日本語のみ',
       '修正：無制限',
     ],
-    color: '#00D4FF',
+    color: '#00b4d8',
+    featured: false,
   },
   {
     name: 'スタンダード',
     price: '¥148,000',
-    note: '税込 〜',
+    note: '税込〜',
     features: [
       '診断項目：最大30問',
       '結果パターン：最大20種',
@@ -105,13 +105,13 @@ const plans = [
       '修正：無制限',
       'AIレコメンド機能',
     ],
-    color: '#c084fc',
+    color: '#7c3aed',
     featured: true,
   },
   {
     name: 'プレミアム',
     price: '¥248,000',
-    note: '税込 〜',
+    note: '税込〜',
     features: [
       '診断項目：無制限',
       '結果パターン：無制限',
@@ -122,7 +122,8 @@ const plans = [
       'ダッシュボード付き',
       'A/Bテスト対応',
     ],
-    color: '#FF6B35',
+    color: '#f97316',
+    featured: false,
   },
 ]
 
@@ -165,11 +166,11 @@ export default function AIDiagPage() {
               <h1 className={styles.heroTitle}>
                 <span className={styles.heroTitlePurple}>AI診断</span>
                 <span className={styles.heroTitleSep}>×</span>
-                データ収集
+                <span>データ収集</span>
               </h1>
               <p className={styles.heroTagline}>ユーザーに価値を。ビジネスに洞察を。</p>
               <p className={styles.heroSub}>
-                ユーザーは診断で自分を知り、あなたのビジネスはそのデータで顧客を知る。<br />
+                ユーザーは診断で自分を知り、あなたのビジネスはそのデータで顧客を知る。
                 双方にメリットをもたらす新しいデータ収集のかたち。
               </p>
               <div className={styles.heroCta}>
@@ -180,42 +181,45 @@ export default function AIDiagPage() {
           </Center>
         </section>
 
-        {/* ── Win-Win メリット ── */}
+        {/* ── Win-Win ── */}
         <section className={styles.section} aria-label="双方のメリット">
           <Center>
-            <Subhead type="small" color="brand" className={styles.subhead}>Win-Win Model</Subhead>
+            <div className={styles.sectionLabel}>Win-Win Model</div>
             <h2 className={styles.sectionTitle}>ユーザーも、ビジネスも、得をする</h2>
-            <div className={styles.meritsGrid}>
-              {merits.map((m) => (
-                <div
-                  key={m.side}
-                  className={styles.meritCard}
-                  style={{ ['--mc' as string]: m.color }}
-                >
+          </Center>
+          <div className={styles.meritsRow}>
+            {merits.map((m) => (
+              <div
+                key={m.side}
+                className={styles.meritPanel}
+                style={{ ['--mc' as string]: m.color }}
+              >
+                <Center>
                   <h3 className={styles.meritTitle}>{m.title}</h3>
                   <ul className={styles.meritList}>
                     {m.items.map((item) => (
                       <li key={item.text} className={styles.meritItem}>
-                        <span aria-hidden="true">{item.icon}</span>
+                        <span className={styles.meritIcon} aria-hidden="true">{item.icon}</span>
                         {item.text}
                       </li>
                     ))}
                   </ul>
-                </div>
-              ))}
-            </div>
-          </Center>
+                </Center>
+              </div>
+            ))}
+          </div>
         </section>
 
-        {/* ── How it works ── */}
-        <section className={styles.sectionDark} aria-label="仕組み">
+        {/* ── Steps ── */}
+        <section className={styles.sectionAlt} aria-label="仕組み">
           <Center>
-            <Subhead type="small" color="brand" className={styles.subhead}>How It Works</Subhead>
-            <h2 className={styles.sectionTitleLight}>3ステップで診断×データ収集を実現</h2>
+            <div className={styles.sectionLabel}>How It Works</div>
+            <h2 className={styles.sectionTitle}>3ステップで完結</h2>
             <div className={styles.steps}>
-              {steps.map((step) => (
+              {steps.map((step, i) => (
                 <div key={step.num} className={styles.step} style={{ ['--sc' as string]: step.color }}>
-                  <div className={styles.stepNum}>{step.num}</div>
+                  <div className={styles.stepCircle}>{step.num}</div>
+                  {i < steps.length - 1 && <div className={styles.stepArrow} aria-hidden="true" />}
                   <h3 className={styles.stepTitle}>{step.title}</h3>
                   <p className={styles.stepDesc}>{step.desc}</p>
                 </div>
@@ -227,7 +231,7 @@ export default function AIDiagPage() {
         {/* ── Use Cases ── */}
         <section className={styles.section} aria-label="活用シーン">
           <Center>
-            <Subhead type="small" color="brand" className={styles.subhead}>Use Cases</Subhead>
+            <div className={styles.sectionLabel}>Use Cases</div>
             <h2 className={styles.sectionTitle}>あらゆる業種に展開できる</h2>
             <div className={styles.casesGrid}>
               {useCases.map((c) => (
@@ -246,10 +250,10 @@ export default function AIDiagPage() {
         </section>
 
         {/* ── Case Study ── */}
-        <section className={styles.sectionDark} id="cases" aria-label="導入事例">
+        <section className={styles.sectionAlt} id="cases" aria-label="導入事例">
           <Center>
-            <Subhead type="small" color="brand" className={styles.subhead}>Case Study</Subhead>
-            <h2 className={styles.sectionTitleLight}>導入事例：爪整体 AI健康診断</h2>
+            <div className={styles.sectionLabel}>Case Study</div>
+            <h2 className={styles.sectionTitle}>導入事例：爪整体 AI健康診断</h2>
             <div className={styles.caseStudy}>
               <div className={styles.caseStudyVisual}>
                 <div className={styles.caseStudyPhone}>
@@ -301,12 +305,12 @@ export default function AIDiagPage() {
         {/* ── Features ── */}
         <section className={styles.section} aria-label="機能">
           <Center>
-            <Subhead type="small" color="brand" className={styles.subhead}>Features</Subhead>
+            <div className={styles.sectionLabel}>Features</div>
             <h2 className={styles.sectionTitle}>標準搭載の機能</h2>
             <div className={styles.featuresGrid}>
-              {features.map((f, i) => (
-                <div key={f.title} className={styles.featureCard}>
-                  <div className={styles.featureNum}>0{i + 1}</div>
+              {features.map((f) => (
+                <div key={f.title} className={styles.featureCard} style={{ ['--fc' as string]: f.color }}>
+                  <div className={styles.featureDot} aria-hidden="true" />
                   <h3 className={styles.featureTitle}>{f.title}</h3>
                   <p className={styles.featureDesc}>{f.desc}</p>
                 </div>
@@ -316,10 +320,10 @@ export default function AIDiagPage() {
         </section>
 
         {/* ── Pricing ── */}
-        <section className={styles.sectionDark} id="plans" aria-label="料金プラン">
+        <section className={styles.sectionAlt} id="plans" aria-label="料金プラン">
           <Center>
-            <Subhead type="small" color="brand" className={styles.subhead}>Pricing</Subhead>
-            <h2 className={styles.sectionTitleLight}>料金プラン</h2>
+            <div className={styles.sectionLabel}>Pricing</div>
+            <h2 className={styles.sectionTitle}>料金プラン</h2>
             <div className={styles.plansGrid}>
               {plans.map((plan) => (
                 <div
@@ -336,7 +340,7 @@ export default function AIDiagPage() {
                   <ul className={styles.planFeatures}>
                     {plan.features.map((feat) => (
                       <li key={feat} className={styles.planFeature}>
-                        <span aria-hidden="true">✓</span> {feat}
+                        <span aria-hidden="true">✓</span>{feat}
                       </li>
                     ))}
                   </ul>
@@ -355,7 +359,7 @@ export default function AIDiagPage() {
         {/* ── FAQ ── */}
         <section className={styles.section} aria-label="よくある質問">
           <Center>
-            <Subhead type="small" color="brand" className={styles.subhead}>FAQ</Subhead>
+            <div className={styles.sectionLabel}>FAQ</div>
             <h2 className={styles.sectionTitle}>よくある質問</h2>
             <dl className={styles.faqList}>
               {faqs.map((item) => (
