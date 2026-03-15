@@ -1,0 +1,77 @@
+.PageBlobs {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.PageBlobs > div {
+  position: absolute;
+  border-radius: 50%;
+  will-change: transform;
+}
+
+/* blue — top right, slow upward parallax */
+.b1 {
+  width: 800px; height: 800px;
+  background: radial-gradient(circle, rgba(45,74,255,0.09) 0%, transparent 65%);
+  top: 0vh; right: -200px;
+  transform: translateY(calc(var(--scroll-y, 0px) * -0.07));
+  animation: driftA 18s ease-in-out infinite;
+}
+
+/* pink — mid left */
+.b2 {
+  width: 700px; height: 700px;
+  background: radial-gradient(circle, rgba(255,45,120,0.07) 0%, transparent 65%);
+  top: 55vh; left: -250px;
+  transform: translateY(calc(var(--scroll-y, 0px) * -0.05));
+  animation: driftB 22s ease-in-out infinite;
+}
+
+/* green — lower right */
+.b3 {
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(0,200,150,0.07) 0%, transparent 65%);
+  top: 110vh; right: 0px;
+  transform: translateY(calc(var(--scroll-y, 0px) * -0.09));
+  animation: driftA 16s ease-in-out infinite 4s;
+}
+
+/* orange — lower left */
+.b4 {
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(255,107,53,0.07) 0%, transparent 65%);
+  top: 160vh; left: 5%;
+  transform: translateY(calc(var(--scroll-y, 0px) * -0.06));
+  animation: driftB 20s ease-in-out infinite 2s;
+}
+
+/* purple — deeper */
+.b5 {
+  width: 650px; height: 650px;
+  background: radial-gradient(circle, rgba(139,45,255,0.06) 0%, transparent 65%);
+  top: 230vh; right: -100px;
+  transform: translateY(calc(var(--scroll-y, 0px) * -0.08));
+  animation: driftA 24s ease-in-out infinite 6s;
+}
+
+/* cyan — bottom */
+.b6 {
+  width: 450px; height: 450px;
+  background: radial-gradient(circle, rgba(0,212,255,0.07) 0%, transparent 65%);
+  top: 300vh; left: 20%;
+  transform: translateY(calc(var(--scroll-y, 0px) * -0.10));
+  animation: driftB 14s ease-in-out infinite 1s;
+}
+
+@keyframes driftA {
+  0%, 100% { transform: translateY(calc(var(--scroll-y, 0px) * -0.07)) translateX(0px); }
+  50%       { transform: translateY(calc(var(--scroll-y, 0px) * -0.07)) translateX(40px); }
+}
+
+@keyframes driftB {
+  0%, 100% { transform: translateY(calc(var(--scroll-y, 0px) * -0.05)) translateX(0px); }
+  50%       { transform: translateY(calc(var(--scroll-y, 0px) * -0.05)) translateX(-50px); }
+}

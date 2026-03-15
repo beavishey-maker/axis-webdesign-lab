@@ -39,33 +39,62 @@
   }
 }
 
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to   { opacity: 1; transform: translateY(0); }
+@keyframes slideInOdd {
+  from { opacity: 0; transform: translateX(-40px) rotate(-2deg); }
+  to   { opacity: 1; transform: translateX(0)     rotate(0deg);  }
+}
+
+@keyframes slideInEven {
+  from { opacity: 0; transform: translateX(40px) rotate(2deg); }
+  to   { opacity: 1; transform: translateX(0)    rotate(0deg); }
 }
 
 .HomeServiceTeaser_card {
   padding: var(--space-7);
-  border: 1px solid var(--color-border);
-  border-radius: 16px;
-  transition: box-shadow var(--transition-base), transform var(--transition-base);
+  border: 1.5px solid var(--color-border);
+  border-radius: 20px;
+  transition: box-shadow 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
   opacity: 0;
-  transform: translateY(20px);
+  position: relative;
+  overflow: hidden;
 }
 
-.HomeServiceTeaser--visible .HomeServiceTeaser_card {
-  animation: fadeInUp 0.6s ease forwards;
+.HomeServiceTeaser_card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(45,74,255,0.03) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.HomeServiceTeaser_card:hover::before { opacity: 1; }
+
+.HomeServiceTeaser--visible .HomeServiceTeaser_card:nth-child(odd) {
+  animation: slideInOdd 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.HomeServiceTeaser--visible .HomeServiceTeaser_card:nth-child(even) {
+  animation: slideInEven 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .HomeServiceTeaser_card:hover {
-  box-shadow: var(--shadow-md);
-  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(45,74,255,0.14);
+  transform: translateY(-6px);
+  border-color: rgba(45,74,255,0.25);
 }
 
 .HomeServiceTeaser_icon {
-  font-size: 2rem;
+  font-size: 2.2rem;
   margin-bottom: var(--space-5);
   line-height: 1;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.HomeServiceTeaser_card:hover .HomeServiceTeaser_icon {
+  transform: scale(1.2) rotate(10deg);
 }
 
 .HomeServiceTeaser_name {
