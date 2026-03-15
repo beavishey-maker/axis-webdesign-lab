@@ -22,11 +22,11 @@
   color: inherit;
 }
 
-/* Spread characters evenly — all words same total width */
+/* Each character gets exactly equal width — grid 1fr per char */
 .HeroCopy_word {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
   width: 100%;
+  /* gridTemplateColumns set inline via word.length */
 }
 
 @keyframes letterFlyIn {
@@ -44,8 +44,9 @@
 }
 
 .HeroCopy_letter {
-  display: inline-block;
-  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   opacity: 0;
   animation: letterFlyIn 0.75s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   will-change: transform, opacity;

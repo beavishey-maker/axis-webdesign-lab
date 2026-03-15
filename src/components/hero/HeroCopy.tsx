@@ -25,7 +25,7 @@ export default function HeroCopy() {
       {lines.map((line, li) => (
         <span key={li} className={`${styles.HeroCopy_line} ${styles[`HeroCopy_line--${li}` as keyof typeof styles]}`}>
           {line.words.map((word, wi) => (
-            <span key={wi} className={styles.HeroCopy_word}>
+            <span key={wi} className={styles.HeroCopy_word} style={{ gridTemplateColumns: `repeat(${word.length}, 1fr)` }}>
               {word.split('').map((char, ci) => {
                 const [lx, ly] = DIRS[letterIndex % DIRS.length]
                 const delay = letterIndex * 0.04
