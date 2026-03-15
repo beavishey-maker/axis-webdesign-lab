@@ -4,14 +4,14 @@ import './globals.css'
 
 const notoSansJP = Noto_Sans_JP({
   subsets: ['latin'],
-  weight: ['400', '500', '700'],
+  weight: ['300', '400', '500', '700'],
   variable: '--font-noto',
   display: 'swap',
 })
 
 const outfit = Outfit({
   subsets: ['latin'],
-  weight: ['400', '600', '700'],
+  weight: ['300', '400', '600', '700'],
   variable: '--font-outfit',
   display: 'swap',
 })

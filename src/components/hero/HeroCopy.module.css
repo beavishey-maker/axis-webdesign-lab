@@ -1,57 +1,41 @@
 .HeroCopy {
   font-family: var(--font-heading);
-  font-weight: 900;
-  line-height: 1.0;
-  letter-spacing: -0.04em;
+  font-weight: 300;
+  font-size: clamp(4.5rem, 14vw, 11rem);
+  line-height: 1.05;
+  letter-spacing: 0;
   color: var(--color-text);
 }
 
 .HeroCopy_line {
   display: block;
+  width: 100%;
 }
 
-.HeroCopy_word {
-  display: inline-block;
-}
-
-/* ── Line 0: "WEB" — small label, tracked out, muted ── */
-.HeroCopy_line--0 {
-  font-size: clamp(1rem, 2.5vw, 1.6rem);
-  font-weight: 400;
-  letter-spacing: 0.28em;
-  color: #888;
-  margin-bottom: 0.1em;
-  text-transform: uppercase;
-}
-
-/* ── Line 1: "もっと" — medium, building up ── */
-.HeroCopy_line--1 {
-  font-size: clamp(3rem, 8vw, 6.5rem);
-  font-weight: 700;
-  letter-spacing: -0.03em;
-  line-height: 1.0;
-  color: var(--color-text);
-}
-
-/* ── Line 2: "自由に。" — largest, boldest, the payoff ── */
+/* Reset per-line overrides from previous iteration */
+.HeroCopy_line--0,
+.HeroCopy_line--1,
 .HeroCopy_line--2 {
-  font-size: clamp(4.5rem, 13vw, 10rem);
-  font-weight: 900;
-  letter-spacing: -0.05em;
-  line-height: 0.92;
-  color: var(--color-text);
+  font-size: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  color: inherit;
 }
 
-/* Fly-in animation */
+/* Spread characters evenly — all words same total width */
+.HeroCopy_word {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
 @keyframes letterFlyIn {
   from {
     opacity: 0;
-    transform: translate(var(--lx, 0px), var(--ly, -80px)) scale(0.2) rotate(calc(var(--lx, 0px) * 0.05deg));
+    transform: translate(var(--lx, 0px), var(--ly, -80px)) scale(0.3) rotate(calc(var(--lx, 0px) * 0.05deg));
     filter: blur(6px);
   }
-  60% {
-    filter: blur(0);
-  }
+  60% { filter: blur(0); }
   to {
     opacity: 1;
     transform: translate(0, 0) scale(1) rotate(0deg);
@@ -61,11 +45,17 @@
 
 .HeroCopy_letter {
   display: inline-block;
+  flex-shrink: 0;
   opacity: 0;
   animation: letterFlyIn 0.75s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   will-change: transform, opacity;
 }
 
+/* Period: brand color, smaller, sits at bottom-right as accent */
 .HeroCopy_period {
   color: var(--color-brand);
+  font-size: 0.65em;
+  align-self: flex-end;
+  padding-bottom: 0.1em;
+  margin-left: -0.15em;
 }
