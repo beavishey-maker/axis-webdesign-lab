@@ -57,8 +57,8 @@
 }
 
 .HomeCover_sub {
-  margin-top: var(--space-6);
-  font-size: clamp(0.875rem, 1.5vw, 1.125rem);
+  margin-top: var(--space-5);
+  font-size: clamp(1rem, 2vw, 1.25rem);
   color: var(--color-text-muted);
   line-height: 1.8;
   opacity: 0;

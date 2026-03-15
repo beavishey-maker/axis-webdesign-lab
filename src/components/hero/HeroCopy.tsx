@@ -23,7 +23,7 @@ export default function HeroCopy() {
   return (
     <h1 className={styles.HeroCopy} aria-label="WEB もっと 自由に。">
       {lines.map((line, li) => (
-        <span key={li} className={styles.HeroCopy_line}>
+        <span key={li} className={`${styles.HeroCopy_line} ${styles[`HeroCopy_line--${li}` as keyof typeof styles]}`}>
           {line.words.map((word, wi) => (
             <span key={wi} className={styles.HeroCopy_word}>
               {word.split('').map((char, ci) => {
