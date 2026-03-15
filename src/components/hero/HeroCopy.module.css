@@ -1,6 +1,6 @@
 .HeroCopy {
   font-family: var(--font-heading);
-  font-weight: 300;
+  font-weight: 500;
   font-size: clamp(4.5rem, 14vw, 11rem);
   line-height: 1.05;
   letter-spacing: 0;
@@ -51,11 +51,3 @@
   will-change: transform, opacity;
 }
 
-/* Period: brand color, smaller, sits at bottom-right as accent */
-.HeroCopy_period {
-  color: var(--color-brand);
-  font-size: 0.65em;
-  align-self: flex-end;
-  padding-bottom: 0.1em;
-  margin-left: -0.15em;
-}
