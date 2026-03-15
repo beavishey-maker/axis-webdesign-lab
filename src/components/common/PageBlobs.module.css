@@ -15,7 +15,7 @@
 /* blue — top right, slow upward parallax */
 .b1 {
   width: 800px; height: 800px;
-  background: radial-gradient(circle, rgba(45,74,255,0.09) 0%, transparent 65%);
+  background: radial-gradient(circle, rgba(45,74,255,0.14) 0%, transparent 65%);
   top: 0vh; right: -200px;
   transform: translateY(calc(var(--scroll-y, 0px) * -0.07));
   animation: driftA 18s ease-in-out infinite;
@@ -24,7 +24,7 @@
 /* pink — mid left */
 .b2 {
   width: 700px; height: 700px;
-  background: radial-gradient(circle, rgba(255,45,120,0.07) 0%, transparent 65%);
+  background: radial-gradient(circle, rgba(255,45,120,0.11) 0%, transparent 65%);
   top: 55vh; left: -250px;
   transform: translateY(calc(var(--scroll-y, 0px) * -0.05));
   animation: driftB 22s ease-in-out infinite;
@@ -33,7 +33,7 @@
 /* green — lower right */
 .b3 {
   width: 600px; height: 600px;
-  background: radial-gradient(circle, rgba(0,200,150,0.07) 0%, transparent 65%);
+  background: radial-gradient(circle, rgba(0,200,150,0.11) 0%, transparent 65%);
   top: 110vh; right: 0px;
   transform: translateY(calc(var(--scroll-y, 0px) * -0.09));
   animation: driftA 16s ease-in-out infinite 4s;

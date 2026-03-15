@@ -1,0 +1,55 @@
+.GlowDivider {
+  position: relative;
+  height: 2px;
+  margin: 0;
+  overflow: visible;
+}
+
+.GlowDivider_line {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--gd-color, #2D4AFF) 30%,
+    color-mix(in srgb, var(--gd-color, #2D4AFF) 60%, #FF2D78) 50%,
+    var(--gd-color, #2D4AFF) 70%,
+    transparent 100%
+  );
+  opacity: 0.4;
+  animation: lineShimmer 4s linear infinite;
+  background-size: 200% 100%;
+}
+
+@keyframes lineShimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.GlowDivider_orb {
+  position: absolute;
+  width: 300px;
+  height: 60px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(ellipse, color-mix(in srgb, var(--gd-color, #2D4AFF) 30%, transparent) 0%, transparent 70%);
+  animation: orbPulse 3s ease-in-out infinite;
+}
+
+.GlowDivider_orb2 {
+  position: absolute;
+  width: 160px;
+  height: 40px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(ellipse, var(--gd-color, #2D4AFF) 0%, transparent 70%);
+  opacity: 0.25;
+  animation: orbPulse 3s ease-in-out infinite 1.5s;
+}
+
+@keyframes orbPulse {
+  0%, 100% { opacity: 0.6; transform: translate(-50%, -50%) scaleX(1); }
+  50%       { opacity: 1;   transform: translate(-50%, -50%) scaleX(1.3); }
+}

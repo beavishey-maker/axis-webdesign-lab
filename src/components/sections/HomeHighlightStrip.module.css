@@ -1,0 +1,87 @@
+.Strip {
+  padding: var(--space-8) 0;
+  background: var(--color-bg-white);
+  overflow: hidden;
+}
+
+.Strip_grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-4);
+}
+
+@media (min-width: 768px) {
+  .Strip_grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@keyframes popIn {
+  from { opacity: 0; transform: scale(0.7) translateY(30px) rotate(-3deg); }
+  to   { opacity: 1; transform: scale(1) translateY(0) rotate(0deg); }
+}
+
+.Strip_card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  padding: var(--space-7) var(--space-5);
+  background: var(--strip-bg, rgba(45,74,255,0.06));
+  border: 1.5px solid var(--strip-color, #2D4AFF);
+  border-radius: 4px;
+  text-align: center;
+  opacity: 0;
+  overflow: hidden;
+  cursor: default;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.Strip--visible .Strip_card {
+  animation: popIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.Strip_card:hover {
+  transform: translateY(-6px) rotate(1deg);
+  box-shadow: 0 20px 50px color-mix(in srgb, var(--strip-color) 25%, transparent);
+}
+
+.Strip_icon {
+  font-size: 2.5rem;
+  line-height: 1;
+  display: block;
+  filter: drop-shadow(0 0 8px var(--strip-color));
+}
+
+.Strip_text {
+  font-family: var(--font-heading);
+  font-size: clamp(0.85rem, 1.5vw, 1rem);
+  font-weight: 700;
+  color: var(--strip-color);
+  line-height: 1.4;
+}
+
+/* Animated glow orb inside card */
+.Strip_glow {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--strip-color) 0%, transparent 70%);
+  opacity: 0.12;
+  bottom: -40px;
+  right: -30px;
+  pointer-events: none;
+  animation: glowPulse 3s ease-in-out infinite;
+}
+
+.Strip_card:nth-child(2) .Strip_glow { animation-delay: 0.75s; }
+.Strip_card:nth-child(3) .Strip_glow { animation-delay: 1.5s; }
+.Strip_card:nth-child(4) .Strip_glow { animation-delay: 2.25s; }
+
+@keyframes glowPulse {
+  0%, 100% { transform: scale(1) translate(0, 0); opacity: 0.12; }
+  50%       { transform: scale(1.4) translate(-10px, -10px); opacity: 0.22; }
+}

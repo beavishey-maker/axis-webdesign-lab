@@ -1,5 +1,17 @@
 import styles from './HeroCopy.module.css'
 
+// 8方向: top / right / bottom / left / 斜め4方向
+const DIRS: Array<[number, number]> = [
+  [0, -220],    // ↑
+  [220, 0],     // →
+  [0, 220],     // ↓
+  [-220, 0],    // ←
+  [160, -160],  // ↗
+  [160, 160],   // ↘
+  [-160, 160],  // ↙
+  [-160, -160], // ↖
+]
+
 const lines = [
   { words: ['Design', 'at', 'the'] },
   { words: ['Axis', 'of'] },
@@ -13,25 +25,25 @@ export default function HeroCopy() {
     <h1 className={styles.HeroCopy} aria-label="Design at the Axis of Creativity.">
       {lines.map((line, li) => (
         <span key={li} className={styles.HeroCopy_line}>
-          {line.words.map((word, wi) => {
-            const words = word === 'Creativity.' ? word.slice(0, -1) : word
-            const isPeriodLine = word === 'Creativity.'
-            const delay = letterIndex * 0.04
-            letterIndex++
-
-            return (
-              <span
-                key={wi}
-                className={styles.HeroCopy_word}
-                style={{ animationDelay: `${delay + 0.1}s` }}
-              >
-                {words}
-                {isPeriodLine && (
-                  <span className={styles.HeroCopy_periodIcon}>.</span>
-                )}
-              </span>
-            )
-          })}
+          {line.words.map((word, wi) => (
+            <span key={wi} className={styles.HeroCopy_word}>
+              {word.split('').map((char, ci) => {
+                const [lx, ly] = DIRS[letterIndex % DIRS.length]
+                const delay = letterIndex * 0.035
+                const isPeriod = char === '.'
+                letterIndex++
+                return (
+                  <span
+                    key={`${li}-${wi}-${ci}`}
+                    className={`${styles.HeroCopy_letter}${isPeriod ? ` ${styles.HeroCopy_period}` : ''}`}
+                    style={{ ['--lx' as string]: `${lx}px`, ['--ly' as string]: `${ly}px`, animationDelay: `${delay}s` }}
+                  >
+                    {char}
+                  </span>
+                )
+              })}
+            </span>
+          ))}
         </span>
       ))}
     </h1>
