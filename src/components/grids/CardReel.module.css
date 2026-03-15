@@ -1,0 +1,28 @@
+.CardReel {
+  display: flex;
+  gap: var(--space-5);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: var(--space-4);
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border) transparent;
+}
+
+.CardReel > * {
+  scroll-snap-align: start;
+  flex-shrink: 0;
+}
+
+.CardReel::-webkit-scrollbar {
+  height: 4px;
+}
+
+.CardReel::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.CardReel::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 2px;
+}

@@ -1,0 +1,117 @@
+.Footer {
+  background: var(--color-footer-bg);
+  color: var(--color-footer-text);
+  padding: var(--space-10) 0 var(--space-7);
+}
+
+.Footer_top {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+  padding-bottom: var(--space-8);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+@media (min-width: 768px) {
+  .Footer_top {
+    grid-template-columns: 280px 1fr;
+  }
+}
+
+.Footer_brand {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.Footer_logo {
+  color: rgba(255,255,255,0.9);
+  transition: opacity var(--transition-fast);
+  display: inline-block;
+}
+.Footer_logo:hover { opacity: 0.7; }
+
+/* Desktop Nav */
+.Footer_nav {
+  display: none;
+}
+@media (min-width: 768px) {
+  .Footer_nav {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-7);
+  }
+}
+
+.Footer_navGroupLabel {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: var(--space-4);
+}
+
+.Footer_navList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.Footer_navLink {
+  font-size: 0.875rem;
+  color: rgba(255,255,255,0.6);
+  transition: color var(--transition-fast);
+}
+.Footer_navLink:hover { color: #ffffff; }
+
+/* Mobile accordion */
+.Footer_mobileNav {
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 768px) {
+  .Footer_mobileNav { display: none; }
+}
+
+.Footer_mobileGroup {
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.Footer_mobileGroupToggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-5) 0;
+  font-family: var(--font-heading);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.8);
+  gap: var(--space-3);
+}
+
+.Footer_mobileGroupList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding-bottom: var(--space-5);
+}
+
+/* Bottom */
+.Footer_bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  padding-top: var(--space-6);
+}
+
+.Footer_copy,
+.Footer_address {
+  font-size: 0.8125rem;
+  color: rgba(255,255,255,0.3);
+  font-family: var(--font-heading);
+}

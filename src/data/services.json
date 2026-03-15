@@ -1,0 +1,26 @@
+[
+  {
+    "id": "uiux",
+    "title": "UI/UX Design",
+    "description": "ユーザーリサーチから情報設計・インタラクションデザイン・プロトタイピングまで一気通貫で対応します。データドリブンなアプローチで課題を特定し、使いやすく美しいデジタル体験を設計します。",
+    "icon": "design"
+  },
+  {
+    "id": "webdev",
+    "title": "Web Development",
+    "description": "Next.js/Reactをベースにパフォーマンスとアクセシビリティを両立した高品質フロントエンド実装。Core Web VitalsをすべてGreenに保ちながら、メンテナブルなコードを届けます。",
+    "icon": "code"
+  },
+  {
+    "id": "brand",
+    "title": "Brand Identity",
+    "description": "ロゴ・カラー・タイポグラフィ・トーン&マナーを策定し、ブランドの核を視覚言語として定義します。ガイドラインとして整備し、一貫したブランド表現を社内外で維持できる体制を構築します。",
+    "icon": "brand"
+  },
+  {
+    "id": "ds",
+    "title": "Design System",
+    "description": "コンポーネントライブラリとデザイントークンを整備し、デザインと開発の一貫性を保つ共通基盤を構築。FigmaとコードベースをSync状態に保つワークフローも設計します。",
+    "icon": "system"
+  }
+]

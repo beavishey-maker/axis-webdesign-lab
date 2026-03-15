@@ -1,0 +1,96 @@
+.WorkCard {
+  display: block;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--color-bg-white);
+  border: 1px solid var(--color-border);
+  transition: box-shadow var(--transition-base), transform var(--transition-base);
+  text-decoration: none;
+  color: var(--color-text);
+}
+
+.WorkCard:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
+}
+
+.WorkCard_thumbWrap {
+  position: relative;
+  aspect-ratio: 16/10;
+  overflow: hidden;
+}
+
+.WorkCard_img {
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.WorkCard:hover .WorkCard_img {
+  transform: scale(1.04);
+}
+
+.WorkCard_imgPlaceholder {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #e8e8e8 0%, #d0d0d0 100%);
+}
+
+.WorkCard_overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.2) 0%, transparent 50%);
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.WorkCard:hover .WorkCard_overlay {
+  opacity: 1;
+}
+
+.WorkCard_body {
+  padding: var(--space-5) var(--space-6);
+}
+
+.WorkCard_meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
+}
+
+.WorkCard_year {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  margin-left: auto;
+}
+
+.WorkCard_title {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--color-text);
+}
+
+/* Skeleton */
+.WorkCard--skeleton {
+  pointer-events: none;
+}
+
+.WorkCard--skeleton .WorkCard_thumb {
+  aspect-ratio: 16/10;
+  background: linear-gradient(90deg, #eee 25%, #f5f5f5 50%, #eee 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+.WorkCard_skeletonLine {
+  height: 14px;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #eee 25%, #f5f5f5 50%, #eee 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  margin-bottom: var(--space-3);
+}

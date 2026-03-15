@@ -1,26 +1,217 @@
-@import "tailwindcss";
+/* ===========================
+   AXIS WEB DESIGN LAB — GLOBALS
+   =========================== */
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body);
+  font-size: var(--font-base-size);
+  line-height: var(--line-height-base);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img, video {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font: inherit;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+/* ===========================
+   CSS Variables
+   =========================== */
+:root {
+  /* ブランドカラー */
+  --color-brand:        #2d4aff;
+  --color-brand-dark:   #1a2eb0;
+  --color-text:         #1a1a1a;
+  --color-text-muted:   #6e6e6e;
+  --color-bg:           #f5f5f3;
+  --color-bg-white:     #ffffff;
+  --color-footer-bg:    #0d0f14;
+  --color-footer-text:  #6e6e6e;
+  --color-border:       rgba(0,0,0,0.1);
+
+  /* アクセントカラー */
+  --color-accent-1: #ff3d6b;
+  --color-accent-2: #ffcc00;
+  --color-accent-3: #ff6b2b;
+  --color-accent-4: #00c9a7;
+
+  /* スペーシング */
+  --space-1:  0.25rem;
+  --space-2:  0.5rem;
+  --space-3:  0.75rem;
+  --space-4:  1rem;
+  --space-5:  1.25rem;
+  --space-6:  1.5rem;
+  --space-7:  2rem;
+  --space-8:  3rem;
+  --space-9:  4rem;
+  --space-10: 6rem;
+
+  /* タイポグラフィ */
+  --font-base-size: 16px;
+  --line-height-base: 1.8;
+  --font-heading: var(--font-outfit, 'Outfit', 'Galano Grotesque', sans-serif);
+  --font-body: var(--font-noto, 'Noto Sans JP', sans-serif);
+
+  /* ヘッダー */
+  --header-height: 88px;
+
+  /* Transition */
+  --transition-fast: 0.15s ease;
+  --transition-base: 0.25s ease;
+  --transition-slow: 0.4s ease;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 4px rgba(0,0,0,0.08);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.1);
+  --shadow-lg: 0 8px 32px rgba(0,0,0,0.12);
+}
+
+/* ===========================
+   Breakpoint Utilities
+   sm: ~767px / md: 768–1023px / lg: 1024–1279px / xl: 1280px~
+   =========================== */
+@media (max-width: 767px) {
+  .md\:hidden { display: none !important; }
+  .md\:block  { display: block !important; }
+}
+@media (min-width: 768px) {
+  .sm\:hidden { display: none !important; }
+}
+@media (min-width: 1024px) {
+  .lg\:block  { display: block !important; }
+  .lg\:hidden { display: none !important; }
+}
+
+/* ===========================
+   Spacing Utilities
+   =========================== */
+.mt3 { margin-top: var(--space-3); }
+.mt4 { margin-top: var(--space-4); }
+.mt5 { margin-top: var(--space-5); }
+.mt6 { margin-top: var(--space-6); }
+.mt7 { margin-top: var(--space-7); }
+.mt8 { margin-top: var(--space-8); }
+.mt9 { margin-top: var(--space-9); }
+.mt10 { margin-top: var(--space-10); }
+
+@media (min-width: 768px) {
+  .md\:mt4 { margin-top: var(--space-4); }
+  .md\:mt6 { margin-top: var(--space-6); }
+  .md\:mt8 { margin-top: var(--space-8); }
+}
+
+/* ===========================
+   Typography Utilities
+   =========================== */
+.text-heading {
+  font-family: var(--font-heading);
+  letter-spacing: -0.02em;
+}
+
+.text-brand { color: var(--color-brand); }
+.text-muted  { color: var(--color-text-muted); }
+
+/* ===========================
+   Keyframe Animations
+   =========================== */
+@keyframes HeroCopy-fadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInDown {
+  from { opacity: 0; transform: translateY(-16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes PageHeader-color-1 {
+  0%,100% { color: var(--color-text); }
+  25%     { color: var(--color-accent-1); }
+  50%     { color: var(--color-brand); }
+}
+@keyframes PageHeader-color-2 {
+  0%,100% { color: var(--color-text); }
+  25%     { color: var(--color-accent-2); }
+}
+@keyframes PageHeader-color-3 {
+  0%,100% { color: var(--color-text); }
+  25%     { color: var(--color-accent-3); }
+}
+@keyframes PageHeader-color-4 {
+  0%,100% { color: var(--color-text); }
+  25%     { color: var(--color-accent-4); }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position:  200% 0; }
+}
+
+@keyframes rippleExpand {
+  from { transform: scale(0); opacity: 0.6; }
+  to   { transform: scale(4); opacity: 0;   }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.5; }
+}
+
+@keyframes wordFadeUp {
+  0%   { opacity: 0; transform: translateY(20px); }
+  15%  { opacity: 1; transform: translateY(0); }
+  85%  { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-20px); }
+}
+
+@keyframes bannerFadeOut {
+  from { opacity: 1; max-height: 60px; }
+  to   { opacity: 0; max-height: 0; padding: 0; }
 }

@@ -1,0 +1,5 @@
+.IconArrow {
+  display: inline-block;
+  flex-shrink: 0;
+  transition: transform var(--transition-fast);
+}

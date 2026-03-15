@@ -1,0 +1,39 @@
+.Banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-4);
+  padding: 0.6rem var(--space-6);
+  background: var(--color-brand);
+  color: #ffffff;
+  font-size: 0.8125rem;
+  font-family: var(--font-heading);
+  font-weight: 500;
+  position: relative;
+  overflow: hidden;
+  animation: slideInDown 0.3s ease;
+}
+
+.Banner--closing {
+  animation: bannerFadeOut 0.3s ease forwards;
+}
+
+.Banner_text {
+  text-align: center;
+  flex: 1;
+}
+
+.Banner_close {
+  position: absolute;
+  right: var(--space-4);
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(255,255,255,0.8);
+  font-size: 0.875rem;
+  padding: 0.25rem;
+  transition: color var(--transition-fast);
+}
+
+.Banner_close:hover {
+  color: #ffffff;
+}

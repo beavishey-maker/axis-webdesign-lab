@@ -1,0 +1,92 @@
+[
+  {
+    "id": "work-01",
+    "title": "NextTech Corporation コーポレートサイトリニューアル",
+    "client": "NextTech Corporation",
+    "expertise": ["UI/UX Design", "Web Development"],
+    "thumbnail": "",
+    "href": "/works/nexttech-corp",
+    "year": 2024
+  },
+  {
+    "id": "work-02",
+    "title": "Lumina Finance ダッシュボードUI設計",
+    "client": "Lumina Finance",
+    "expertise": ["UI/UX Design", "Design System"],
+    "thumbnail": "",
+    "href": "/works/lumina-finance",
+    "year": 2024
+  },
+  {
+    "id": "work-03",
+    "title": "GreenPath ブランドアイデンティティ",
+    "client": "GreenPath Inc.",
+    "expertise": ["Brand Identity"],
+    "thumbnail": "",
+    "href": "/works/greenpath",
+    "year": 2024
+  },
+  {
+    "id": "work-04",
+    "title": "Archi Studio ポートフォリオサイト",
+    "client": "Archi Studio",
+    "expertise": ["UI/UX Design", "Web Development"],
+    "thumbnail": "",
+    "href": "/works/archi-studio",
+    "year": 2023
+  },
+  {
+    "id": "work-05",
+    "title": "MedConnect 患者向けアプリUI",
+    "client": "MedConnect",
+    "expertise": ["UI/UX Design"],
+    "thumbnail": "",
+    "href": "/works/medconnect",
+    "year": 2023
+  },
+  {
+    "id": "work-06",
+    "title": "Volta EV デザインシステム構築",
+    "client": "Volta EV",
+    "expertise": ["Design System", "Web Development"],
+    "thumbnail": "",
+    "href": "/works/volta-ev",
+    "year": 2023
+  },
+  {
+    "id": "work-07",
+    "title": "Bloom Cosmetics ECサイトリデザイン",
+    "client": "Bloom Cosmetics",
+    "expertise": ["UI/UX Design", "Brand Identity"],
+    "thumbnail": "",
+    "href": "/works/bloom-cosmetics",
+    "year": 2023
+  },
+  {
+    "id": "work-08",
+    "title": "Stackwise SaaS管理画面UI",
+    "client": "Stackwise",
+    "expertise": ["UI/UX Design", "Design System"],
+    "thumbnail": "",
+    "href": "/works/stackwise",
+    "year": 2022
+  },
+  {
+    "id": "work-09",
+    "title": "HorizonBank ウェブバンキングリニューアル",
+    "client": "HorizonBank",
+    "expertise": ["UI/UX Design", "Web Development"],
+    "thumbnail": "",
+    "href": "/works/horizonbank",
+    "year": 2022
+  },
+  {
+    "id": "work-10",
+    "title": "Zenith Music ストリーミングプラットフォーム",
+    "client": "Zenith Music",
+    "expertise": ["UI/UX Design", "Brand Identity", "Web Development"],
+    "thumbnail": "",
+    "href": "/works/zenith-music",
+    "year": 2022
+  }
+]

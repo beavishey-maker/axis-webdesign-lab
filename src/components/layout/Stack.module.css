@@ -1,0 +1,5 @@
+.Stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--Stack-space, var(--space-6));
+}

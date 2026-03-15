@@ -1,0 +1,56 @@
+[
+  {
+    "id": "blog-01",
+    "title": "2024年のWebデザイントレンド：AIとデザインの融合",
+    "category": "デザイントレンド",
+    "date": "2024-03-15",
+    "thumbnail": "",
+    "excerpt": "AIツールの台頭によって、デザインプロセスはどう変わるのか。実践的な視点から2024年の展望を解説します。",
+    "href": "/blog/2024-design-trends"
+  },
+  {
+    "id": "blog-02",
+    "title": "ゼロから始めるデザインシステム構築ガイド",
+    "category": "デザインシステム",
+    "date": "2024-02-20",
+    "thumbnail": "",
+    "excerpt": "コンポーネントライブラリとデザイントークンを中心に、スケーラブルなデザインシステムの作り方を紹介します。",
+    "href": "/blog/design-system-guide"
+  },
+  {
+    "id": "blog-03",
+    "title": "Next.js App RouterとCSS Modulesのベストプラクティス",
+    "category": "フロントエンド",
+    "date": "2024-01-30",
+    "thumbnail": "",
+    "excerpt": "Next.js 15のApp RouterでCSS Modulesを最大限に活用するためのパターンと注意点を共有します。",
+    "href": "/blog/nextjs-css-modules"
+  },
+  {
+    "id": "blog-04",
+    "title": "アクセシビリティを組み込んだUIコンポーネント設計",
+    "category": "アクセシビリティ",
+    "date": "2024-01-10",
+    "thumbnail": "",
+    "excerpt": "WAI-ARIAとキーボードナビゲーションを考慮したコンポーネント設計の実践的なアプローチ。",
+    "href": "/blog/accessible-ui-components"
+  },
+  {
+    "id": "blog-05",
+    "title": "ブランドアイデンティティがWebデザインに与える影響",
+    "category": "ブランディング",
+    "date": "2023-12-05",
+    "thumbnail": "",
+    "excerpt": "強いブランドアイデンティティはWebデザインにどう反映されるべきか。事例を交えながら解説します。",
+    "href": "/blog/brand-identity-web"
+  },
+  {
+    "id": "blog-06",
+    "title": "パフォーマンス最適化：Core Web Vitalsを改善する方法",
+    "category": "パフォーマンス",
+    "date": "2023-11-20",
+    "thumbnail": "",
+    "excerpt": "LCP・CLS・INPの3指標を改善するための実践的なテクニックと計測方法を解説します。",
+    "href": "/blog/core-web-vitals"
+  }
+]

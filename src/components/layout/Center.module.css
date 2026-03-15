@@ -1,0 +1,22 @@
+.Center {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--space-6);
+  padding-right: var(--space-6);
+}
+
+.Center--default {
+  max-width: 1080px;
+}
+
+.Center--wide {
+  max-width: 1440px;
+}
+
+@media (min-width: 768px) {
+  .Center {
+    padding-left: var(--space-8);
+    padding-right: var(--space-8);
+  }
+}

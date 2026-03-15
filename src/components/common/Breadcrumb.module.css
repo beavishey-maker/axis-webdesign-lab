@@ -1,0 +1,35 @@
+.Breadcrumb {
+  margin-bottom: var(--space-6);
+}
+
+.Breadcrumb_list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.Breadcrumb_item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.Breadcrumb_link {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+  transition: color var(--transition-fast);
+}
+.Breadcrumb_link:hover { color: var(--color-text); }
+
+.Breadcrumb_current {
+  font-size: 0.8125rem;
+  color: var(--color-text);
+  font-weight: 500;
+}
+
+.Breadcrumb_sep {
+  color: var(--color-text-muted);
+  display: flex;
+  align-items: center;
+}

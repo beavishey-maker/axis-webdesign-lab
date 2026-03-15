@@ -1,0 +1,40 @@
+.Badge {
+  display: inline-block;
+  padding: 0.25rem 0.625rem;
+  border-radius: 100px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  font-family: var(--font-heading);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.Badge--default {
+  background: rgba(0,0,0,0.06);
+  color: var(--color-text-muted);
+}
+
+.Badge--brand {
+  background: rgba(45,74,255,0.1);
+  color: var(--color-brand);
+}
+
+.Badge--pink {
+  background: rgba(255,61,107,0.1);
+  color: #ff3d6b;
+}
+
+.Badge--yellow {
+  background: rgba(255,204,0,0.15);
+  color: #996b00;
+}
+
+.Badge--teal {
+  background: rgba(0,201,167,0.1);
+  color: #009d82;
+}
+
+.Badge--orange {
+  background: rgba(255,107,43,0.1);
+  color: #cc4400;
+}

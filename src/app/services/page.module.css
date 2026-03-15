@@ -1,0 +1,67 @@
+.page {
+  padding-top: var(--header-height);
+}
+
+.pageHero {
+  padding: var(--space-10) 0;
+  background: var(--color-bg-white);
+}
+
+.pageTitle {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  color: var(--color-text);
+  margin-top: var(--space-3);
+}
+
+.pageSection {
+  padding: var(--space-10) 0;
+}
+
+.servicesList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.serviceItem {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--space-8);
+  padding: var(--space-8) 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.serviceItem_num {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-brand);
+  letter-spacing: 0.08em;
+  padding-top: 0.25rem;
+  min-width: 32px;
+}
+
+.serviceItem_content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.serviceItem_title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--color-text);
+}
+
+.serviceItem_desc {
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  line-height: 1.8;
+  max-width: 640px;
+}

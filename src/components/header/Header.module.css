@@ -1,0 +1,193 @@
+.Header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--header-height);
+  z-index: 100;
+  transition: background var(--transition-base), box-shadow var(--transition-base);
+}
+
+.Header--scrolled {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: var(--shadow-sm);
+}
+
+.Header_skipLink {
+  position: absolute;
+  top: -100%;
+  left: var(--space-4);
+  background: var(--color-brand);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 0 0 8px 8px;
+  font-size: 0.875rem;
+  z-index: 9999;
+}
+.Header_skipLink:focus {
+  top: 0;
+}
+
+.Header_inner {
+  height: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 var(--space-6);
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+}
+
+@media (min-width: 768px) {
+  .Header_inner {
+    padding: 0 var(--space-8);
+  }
+}
+
+.Header_logo {
+  display: flex;
+  align-items: center;
+  color: var(--color-text);
+  flex-shrink: 0;
+  transition: opacity var(--transition-fast);
+}
+.Header_logo:hover { opacity: 0.7; }
+
+/* Dark header (on hero) */
+.Header:not(.Header--scrolled) .Header_logo {
+  color: #ffffff;
+}
+
+.Header_nav {
+  flex: 1;
+  display: none;
+}
+@media (min-width: 768px) {
+  .Header_nav { display: block; }
+}
+
+.Header_navList {
+  display: flex;
+  align-items: center;
+  gap: var(--space-7);
+}
+
+.Header_navItem {
+  position: relative;
+}
+
+.Header_navLink {
+  font-family: var(--font-heading);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  transition: color var(--transition-fast);
+  padding: 0.5rem 0;
+  display: block;
+}
+.Header_navLink:hover { color: var(--color-text); }
+
+.Header:not(.Header--scrolled) .Header_navLink {
+  color: rgba(255,255,255,0.7);
+}
+.Header:not(.Header--scrolled) .Header_navLink:hover {
+  color: #ffffff;
+}
+
+.Header_cta {
+  display: none;
+  padding: 0.5rem 1.25rem;
+  background: var(--color-brand);
+  color: #ffffff;
+  border-radius: 100px;
+  font-family: var(--font-heading);
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: background var(--transition-fast);
+  margin-left: auto;
+}
+.Header_cta:hover { background: var(--color-brand-dark); }
+
+@media (min-width: 768px) {
+  .Header_cta { display: inline-flex; }
+}
+
+.Header_hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 36px;
+  height: 36px;
+  padding: 6px;
+  margin-left: auto;
+}
+@media (min-width: 768px) {
+  .Header_hamburger { display: none; }
+}
+
+.Header_hamburgerLine {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: currentColor;
+  border-radius: 2px;
+  transition: transform var(--transition-base), opacity var(--transition-base);
+  transform-origin: center;
+}
+
+.Header:not(.Header--scrolled) .Header_hamburgerLine {
+  background: #ffffff;
+}
+
+.Header_hamburgerLine--open:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.Header_hamburgerLine--open:nth-child(2) { opacity: 0; }
+.Header_hamburgerLine--open:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* Mobile overlay */
+.Header_mobileOverlay {
+  position: fixed;
+  inset: 0;
+  background: var(--color-footer-bg);
+  z-index: 99;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--space-8);
+  animation: fadeIn 0.2s ease;
+}
+
+.Header_mobileNavList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.Header_mobileNavLink {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.2;
+  transition: color var(--transition-fast);
+}
+.Header_mobileNavLink:hover { color: var(--color-brand); }
+
+.Header_mobileCta {
+  margin-top: var(--space-8);
+}
+
+.Header_mobileCtaBtn {
+  display: inline-flex;
+  padding: 0.875rem 1.75rem;
+  background: var(--color-brand);
+  color: #ffffff;
+  border-radius: 100px;
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background var(--transition-fast);
+}
+.Header_mobileCtaBtn:hover { background: var(--color-brand-dark); }

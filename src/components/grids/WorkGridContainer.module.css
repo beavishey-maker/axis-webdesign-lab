@@ -1,0 +1,37 @@
+.WorkGridContainer {
+  position: relative;
+}
+
+.WorkGridContainer_loupe {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 2px solid var(--color-brand);
+  pointer-events: none;
+  z-index: 10;
+  top: var(--WorkGridContainer-loupeY, 50%);
+  left: var(--WorkGridContainer-loupeX, 50%);
+  transform: translate(-50%, -50%) scale(var(--WorkGridContainer-loupeScale, 0));
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  mix-blend-mode: multiply;
+  background: rgba(45, 74, 255, 0.06);
+}
+
+.WorkGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+}
+
+@media (min-width: 768px) {
+  .WorkGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .WorkGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

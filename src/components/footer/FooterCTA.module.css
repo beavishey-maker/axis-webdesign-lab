@@ -1,0 +1,52 @@
+.FooterCTA {
+  background: var(--color-footer-bg);
+}
+
+.FooterCTA_inner {
+  position: relative;
+  overflow: hidden;
+  padding: var(--space-10) 0;
+  cursor: default;
+}
+
+.FooterCTA_loupe {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  pointer-events: none;
+  background: radial-gradient(circle at center, rgba(45,74,255,0.15) 0%, transparent 70%);
+  top: var(--FooterCTA-loupeY, 50%);
+  left: var(--FooterCTA-loupeX, 50%);
+  transform: translate(-50%, -50%) scale(var(--FooterCTA-loupeScale, 0));
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 0;
+}
+
+.FooterCTA_content {
+  position: relative;
+  z-index: 1;
+  color: #ffffff;
+}
+
+.FooterCTA_title {
+  font-family: var(--font-heading);
+  font-size: clamp(3rem, 8vw, 7rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1.0;
+  margin-bottom: var(--space-6);
+}
+
+.FooterCTA_sub {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.8;
+  margin-bottom: var(--space-7);
+}
+
+.FooterCTA_actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}

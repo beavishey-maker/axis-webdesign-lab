@@ -1,0 +1,41 @@
+.Backdrop {
+  position: relative;
+  padding: var(--space-10) 0;
+  background: var(--color-footer-bg);
+  overflow: hidden;
+}
+
+.Backdrop_ripple {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at center,
+    var(--color-brand) 0%,
+    transparent var(--ripple-radius, 0%)
+  );
+  opacity: 0.3;
+  transition: none;
+}
+
+.Backdrop_content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: #ffffff;
+}
+
+.Backdrop_title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  margin-bottom: var(--space-6);
+}
+
+.Backdrop_sub {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.8;
+  margin-bottom: var(--space-7);
+}

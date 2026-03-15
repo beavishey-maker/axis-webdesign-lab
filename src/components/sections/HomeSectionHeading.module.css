@@ -1,0 +1,44 @@
+.HomeSectionHeading {
+  text-align: center;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.HomeSectionHeading_visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.HomeSectionHeading_title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: var(--color-text);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1em;
+}
+
+.HomeSectionHeading_static {
+  display: block;
+}
+
+.HomeSectionHeading_word {
+  display: block;
+  color: var(--color-brand);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.HomeSectionHeading_word--in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.HomeSectionHeading_word--out {
+  opacity: 0;
+  transform: translateY(-12px);
+}

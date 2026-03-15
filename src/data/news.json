@@ -1,0 +1,26 @@
+[
+  {
+    "id": "news-01",
+    "title": "Axis Web Design Lab、2024年度グッドデザイン賞を受賞",
+    "date": "2024-10-15",
+    "type": "press"
+  },
+  {
+    "id": "news-02",
+    "title": "Web Design Conference Tokyo 2024に登壇予定",
+    "date": "2024-11-08",
+    "type": "event"
+  },
+  {
+    "id": "news-03",
+    "title": "新サービス「DesignOps支援プラン」を提供開始",
+    "date": "2024-09-01",
+    "type": "update"
+  },
+  {
+    "id": "news-04",
+    "title": "Figmaプラグイン「Axis Tokens」をリリース",
+    "date": "2024-08-20",
+    "type": "update"
+  }
+]
