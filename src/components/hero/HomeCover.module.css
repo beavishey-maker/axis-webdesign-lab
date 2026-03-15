@@ -5,13 +5,26 @@
   display: flex;
   align-items: center;
   overflow: hidden;
+  background: #ffffff;
 }
 
+/* ── Colorful bright background ── */
 .HomeCover_bg {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, #0d0f14 0%, #1a2eb0 60%, #0d0f14 100%);
+  background:
+    radial-gradient(ellipse 70% 55% at 85% 5%,  rgba(45, 74, 255, 0.18) 0%, transparent 60%),
+    radial-gradient(ellipse 55% 55% at 5%  90%,  rgba(110, 40, 220, 0.13) 0%, transparent 55%),
+    radial-gradient(ellipse 40% 40% at 95% 95%,  rgba(255, 70, 110, 0.10) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 40% at 45% 55%,  rgba(0,  200, 255, 0.06) 0%, transparent 65%),
+    #ffffff;
   z-index: 0;
+}
+
+/* ── Video: fades from 0.7 → 0 ── */
+@keyframes videoFadeOut {
+  0%,  55% { opacity: 0.7; }
+  100%     { opacity: 0;   }
 }
 
 .HomeCover_video {
@@ -21,16 +34,15 @@
   height: 100%;
   object-fit: cover;
   z-index: 1;
-  opacity: 0.4;
+  animation: videoFadeOut 5.5s ease-in-out 0.3s forwards;
 }
 
+/* Remove dark overlay — bright hero needs light */
 .HomeCover_overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom, rgba(13,15,20,0.3) 0%, rgba(13,15,20,0.6) 100%);
-  z-index: 2;
+  display: none;
 }
 
+/* ── Content ── */
 .HomeCover_content {
   position: relative;
   z-index: 3;
@@ -49,7 +61,7 @@
 
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(24px); }
-  to   { opacity: 1; transform: translateY(0); }
+  to   { opacity: 1; transform: translateY(0);    }
 }
 
 @keyframes fadeIn {
@@ -60,7 +72,7 @@
 .HomeCover_sub {
   margin-top: var(--space-6);
   font-size: clamp(0.875rem, 1.5vw, 1.125rem);
-  color: rgba(255, 255, 255, 0.75);
+  color: var(--color-text-muted);
   line-height: 1.8;
   opacity: 0;
   animation: fadeInUp 0.8s ease 1.2s forwards;
@@ -76,7 +88,7 @@
   animation: fadeInUp 0.8s ease 1.5s forwards;
 }
 
-/* Scroll indicator */
+/* ── Scroll indicator ── */
 .HomeCover_scroll {
   position: absolute;
   bottom: var(--space-7);
@@ -95,7 +107,7 @@
   display: block;
   width: 1px;
   height: 48px;
-  background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.6));
+  background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.2));
 }
 
 .HomeCover_scrollText {
@@ -103,5 +115,5 @@
   font-size: 0.6875rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.5);
+  color: var(--color-text-muted);
 }

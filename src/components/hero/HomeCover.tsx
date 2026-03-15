@@ -1,51 +1,25 @@
 'use client'
-import { useEffect, useRef } from 'react'
 import styles from './HomeCover.module.css'
 import HeroCopy from './HeroCopy'
 import HeroGeometric from './HeroGeometric'
 import Button from '@/components/ui/Button'
 
 export default function HomeCover() {
-  const videoRef = useRef<HTMLVideoElement>(null)
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting && videoRef.current) {
-          videoRef.current.load()
-          observer.disconnect()
-        }
-      },
-      { threshold: 0 }
-    )
-
-    if (videoRef.current) {
-      observer.observe(videoRef.current)
-    }
-
-    return () => observer.disconnect()
-  }, [])
-
   return (
     <section className={styles.HomeCover} aria-label="ヒーローセクション">
-      {/* Fallback gradient background */}
+      {/* Colorful gradient background */}
       <div className={styles.HomeCover_bg} aria-hidden="true" />
 
-      {/* Decorative video (if available) */}
+      {/* Hero video — fades out to reveal white background */}
       <video
-        ref={videoRef}
         className={styles.HomeCover_video}
         autoPlay
         muted
-        loop
         playsInline
-        preload="none"
-        poster="/images/hero-poster.jpg"
+        preload="auto"
         aria-hidden="true"
+        src="/hero.mp4"
       />
-
-      {/* Overlay */}
-      <div className={styles.HomeCover_overlay} aria-hidden="true" />
 
       {/* Geometric decorations */}
       <HeroGeometric />
@@ -57,7 +31,7 @@ export default function HomeCover() {
           デザインとテクノロジーの交差点に立つ<br />Webデザインスタジオ
         </p>
         <div className={styles.HomeCover_cta}>
-          <Button href="/works" variant="white" size="lg">
+          <Button href="/works" variant="default" size="lg">
             実績を見る
           </Button>
           <Button href="/contact" variant="outline" size="lg">

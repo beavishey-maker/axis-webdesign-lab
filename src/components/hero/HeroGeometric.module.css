@@ -25,19 +25,14 @@
 }
 
 @keyframes pulseDot {
-  0%, 100% { opacity: 0.3; transform: scale(1); }
-  50%       { opacity: 0.8; transform: scale(1.4); }
+  0%, 100% { opacity: 0.25; transform: scale(1); }
+  50%       { opacity: 0.7;  transform: scale(1.5); }
 }
 
 @keyframes drawLine {
   0%   { transform: scaleX(0); opacity: 0; }
   20%  { opacity: 1; }
-  100% { transform: scaleX(1); opacity: 0.15; }
-}
-
-@keyframes fadeInScale {
-  from { opacity: 0; transform: scale(0.6); }
-  to   { opacity: 1; transform: scale(1); }
+  100% { transform: scaleX(1); opacity: 0.4; }
 }
 
 /* ========== Shapes ========== */
@@ -47,34 +42,54 @@
   border-radius: 50%;
 }
 
-/* 大きい薄い円（右上） */
+/* 大きい円（右上） — blue ring */
 .circle1 {
   width: 600px;
   height: 600px;
-  border: 1px solid rgba(45, 74, 255, 0.2);
+  border: 1.5px solid rgba(45, 74, 255, 0.22);
   top: -200px;
   right: -150px;
   animation: rotateSlow 40s linear infinite;
 }
 
-/* 中くらいの円（左中） */
+/* 中くらいの円（左中） — purple ring */
 .circle2 {
-  width: 300px;
-  height: 300px;
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  width: 320px;
+  height: 320px;
+  border: 1.5px solid rgba(120, 40, 220, 0.15);
   bottom: 10%;
   left: -80px;
   animation: floatSlow 12s ease-in-out infinite;
 }
 
-/* 小さい塗り円（右下） */
+/* 小さい塗り円（右下） — coral blob */
 .circle3 {
+  width: 160px;
+  height: 160px;
+  background: radial-gradient(circle, rgba(255, 80, 120, 0.2) 0%, transparent 70%);
+  bottom: 22%;
+  right: 8%;
+  animation: floatMedium 8s ease-in-out infinite;
+}
+
+/* 青いblob（左上） */
+.circle4 {
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(45, 74, 255, 0.15) 0%, transparent 70%);
+  top: 15%;
+  left: 5%;
+  animation: floatMedium 10s ease-in-out infinite 2s;
+}
+
+/* 水色blob（中央右） */
+.circle5 {
   width: 120px;
   height: 120px;
-  background: radial-gradient(circle, rgba(45, 74, 255, 0.25) 0%, transparent 70%);
-  bottom: 20%;
-  right: 10%;
-  animation: floatMedium 8s ease-in-out infinite;
+  background: radial-gradient(circle, rgba(0, 200, 255, 0.18) 0%, transparent 70%);
+  top: 50%;
+  right: 22%;
+  animation: floatSlow 9s ease-in-out infinite 1s;
 }
 
 /* 横線1 */
@@ -82,7 +97,7 @@
   border-radius: 0;
   width: 400px;
   height: 1px;
-  background: linear-gradient(to right, transparent, rgba(255,255,255,0.1), transparent);
+  background: linear-gradient(to right, transparent, rgba(45, 74, 255, 0.35), transparent);
   top: 30%;
   right: 5%;
   transform-origin: left;
@@ -95,8 +110,8 @@
   border-radius: 0;
   width: 250px;
   height: 1px;
-  background: linear-gradient(to right, transparent, rgba(45,74,255,0.3), transparent);
-  top: 60%;
+  background: linear-gradient(to right, transparent, rgba(120, 40, 220, 0.35), transparent);
+  top: 62%;
   left: 10%;
   transform: rotate(-25deg);
   transform-origin: left;
@@ -104,43 +119,54 @@
   opacity: 0;
 }
 
-/* 小さい四角形1 */
+/* 小さい四角形1 — blue border */
 .square1 {
-  border-radius: 4px;
-  width: 40px;
-  height: 40px;
-  border: 1.5px solid rgba(45, 74, 255, 0.4);
+  border-radius: 6px;
+  width: 44px;
+  height: 44px;
+  border: 2px solid rgba(45, 74, 255, 0.45);
   top: 25%;
   right: 20%;
   animation: floatSlow 10s ease-in-out infinite, rotateSlow 20s linear infinite;
 }
 
-/* 小さい四角形2 */
+/* 小さい四角形2 — coral fill */
 .square2 {
-  border-radius: 2px;
-  width: 18px;
-  height: 18px;
-  background: rgba(45, 74, 255, 0.3);
+  border-radius: 3px;
+  width: 20px;
+  height: 20px;
+  background: rgba(255, 80, 120, 0.35);
   top: 55%;
   right: 30%;
   animation: floatMedium 7s ease-in-out infinite 1.5s;
 }
 
+/* 小さい四角形3 — cyan fill */
+.square3 {
+  border-radius: 3px;
+  width: 14px;
+  height: 14px;
+  background: rgba(0, 200, 255, 0.4);
+  top: 38%;
+  left: 22%;
+  animation: floatMedium 6s ease-in-out infinite 3s;
+}
+
 /* ドット群 */
 .dots {
   position: absolute;
-  top: 15%;
+  top: 14%;
   left: 5%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  gap: 18px;
 }
 
 .dot {
-  width: 4px;
-  height: 4px;
+  width: 5px;
+  height: 5px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(45, 74, 255, 0.45);
   animation: pulseDot 3s ease-in-out infinite;
 }
 
@@ -149,8 +175,8 @@
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+    linear-gradient(rgba(45, 74, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(45, 74, 255, 0.04) 1px, transparent 1px);
   background-size: 80px 80px;
   mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 0%, transparent 100%);
   -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 0%, transparent 100%);

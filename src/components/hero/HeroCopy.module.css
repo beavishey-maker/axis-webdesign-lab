@@ -4,7 +4,7 @@
   font-weight: 700;
   line-height: 1.05;
   letter-spacing: -0.03em;
-  color: #ffffff;
+  color: var(--color-text);
 }
 
 .HeroCopy_line {
