@@ -172,8 +172,8 @@ export default function HeroIntro({ onDone }: Props) {
     let W = 0, H = 0
 
     function resize() {
-      W = canvas.width  = wrap.clientWidth
-      H = canvas.height = wrap.clientHeight
+      W = canvas!.width  = wrap!.clientWidth
+      H = canvas!.height = wrap!.clientHeight
     }
     resize()
     window.addEventListener('resize', resize)
