@@ -75,6 +75,26 @@
   }
 }
 
+/* ── Card image ── */
+.HomeSns_cardImg {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: var(--space-6);
+}
+
+.HomeSns_cardImgEl {
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.5s ease;
+}
+
+.HomeSns_card:hover .HomeSns_cardImgEl {
+  transform: scale(1.04);
+}
+
 /* ── Card ── */
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(28px); }

@@ -1,5 +1,6 @@
 'use client'
 import { useRef } from 'react'
+import Image from 'next/image'
 import styles from './HomeSnsSection.module.css'
 import { useIntersection } from '@/lib/useIntersection'
 import Center from '@/components/layout/Center'
@@ -14,6 +15,7 @@ const points = [
     label: 'SNSで注目を集めても',
     heading: 'みんな、すぐ\n目移りする。',
     body: 'リール・TikTok・ストーリーズ——コンテンツが溢れるSNS時代、どんなに刺さる投稿でも3秒後には次の投稿へ。お金と時間をかけて集めた注目は、放っておけばそのまま流れていく。',
+    image: '/2.png',
   },
   {
     id: 'convert',
@@ -23,6 +25,7 @@ const points = [
     label: '最後の一押しが全てを決める',
     heading: '打率を上げる\n「決め」の場所。',
     body: '野球と同じ。どれだけ出塁しても、打点がなければ点が入らない。HPやLPは、SNSで興味を持った人を「行動」まで連れていく最後の決定打。ここが弱ければ、すべての努力がもったいない。',
+    image: '/3.png',
   },
   {
     id: 'asset',
@@ -32,6 +35,7 @@ const points = [
     label: '資産として働き続ける',
     heading: '24時間、無言で\n売り続ける。',
     body: 'SNS投稿は流れていくが、HPは積み上がる。一度作れば検索からも人が来る。寝ている間も、旅行中も、あなたの代わりに説明し、信頼を積み、問い合わせを呼び込み続ける最強のセールスマンだ。',
+    image: '/10.png',
   },
 ]
 
@@ -74,6 +78,9 @@ export default function HomeSnsSection() {
                 animationDelay: `${i * 0.15}s`,
               } as React.CSSProperties}
             >
+              <div className={styles.HomeSns_cardImg}>
+                <Image src={p.image} alt="" fill className={styles.HomeSns_cardImgEl} />
+              </div>
               <div className={styles.HomeSns_cardTop}>
                 <span className={styles.HomeSns_emoji} aria-hidden="true">{p.emoji}</span>
                 <span className={styles.HomeSns_label}>{p.label}</span>

@@ -5,6 +5,17 @@
   overflow: hidden;
 }
 
+.Backdrop::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('/7.png');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.35;
+  z-index: 0;
+}
+
 .Backdrop_ripple {
   position: absolute;
   inset: 0;

@@ -1,5 +1,6 @@
 'use client'
 import { useRef } from 'react'
+import Image from 'next/image'
 import styles from './HomeWorksSection.module.css'
 import { useIntersection } from '@/lib/useIntersection'
 import Center from '@/components/layout/Center'
@@ -27,6 +28,9 @@ export default function HomeWorksSection({ works }: HomeWorksSectionProps) {
           <div>
             <Subhead type="small" color="brand">Works</Subhead>
             <h2 className={styles.HomeWorksSection_title}>Selected Works</h2>
+          </div>
+          <div className={styles.HomeWorksSection_mockup} aria-hidden="true">
+            <Image src="/9.png" alt="" fill className={styles.HomeWorksSection_mockupImg} />
           </div>
           <Button href="/works" variant="outline" size="md">
             すべての実績

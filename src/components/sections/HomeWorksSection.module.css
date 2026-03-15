@@ -10,6 +10,29 @@
   flex-wrap: wrap;
   gap: var(--space-6);
   margin-bottom: var(--space-7);
+  position: relative;
+}
+
+.HomeWorksSection_mockup {
+  display: none;
+  position: relative;
+  width: 320px;
+  height: 180px;
+  border-radius: 12px;
+  overflow: hidden;
+  opacity: 0.85;
+  flex-shrink: 0;
+}
+
+@media (min-width: 1024px) {
+  .HomeWorksSection_mockup {
+    display: block;
+  }
+}
+
+.HomeWorksSection_mockupImg {
+  object-fit: cover;
+  object-position: top;
 }
 
 .HomeWorksSection_title {
