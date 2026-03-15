@@ -1,254 +1,268 @@
-.HomeServiceAIDiag {
+/* ─── Section shell ─── */
+.wrap {
   position: relative;
   overflow: hidden;
-  background: #05060f;
-  padding: var(--space-16) 0;
-  min-height: 560px;
+  background: #040614;          /* cool dark — clearly different from LP's warm dark */
+  padding: clamp(80px, 10vw, 120px) 0;
   display: flex;
   align-items: center;
 }
 
-.HomeServiceAIDiag_canvas {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  opacity: 0.5;
-}
-
-.HomeServiceAIDiag_vignette {
+/* Subtle purple glow bleeding from top-right */
+.wrap::before {
+  content: '';
   position: absolute;
   inset: 0;
   z-index: 1;
   background:
-    radial-gradient(ellipse 55% 100% at 20% 50%, rgba(5, 6, 15, 0.4) 0%, rgba(5, 6, 15, 0.92) 100%),
-    radial-gradient(ellipse 60% 100% at 80% 50%, rgba(5, 6, 15, 0.65) 0%, rgba(5, 6, 15, 0.95) 100%);
+    radial-gradient(ellipse 60% 70% at 105% 0%, rgba(140, 60, 255, 0.09) 0%, transparent 65%),
+    radial-gradient(ellipse 80% 80% at 50% 50%, rgba(4, 6, 20, 0.5) 0%, rgba(4, 6, 20, 0.92) 100%);
   pointer-events: none;
 }
 
-/* ── Layout ── */
-.HomeServiceAIDiag_layout {
-  position: relative;
+/* Canvas: ambient texture */
+.canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.35;
+}
+
+/* Vignette — edges fade to section bg */
+.vignette {
+  position: absolute;
+  inset: 0;
   z-index: 2;
+  background:
+    linear-gradient(to right, #040614 0%, transparent 15%, transparent 85%, #040614 100%),
+    linear-gradient(to bottom, #040614 0%, transparent 12%, transparent 88%, #040614 100%);
+  pointer-events: none;
+}
+
+/* ─── Split layout ─── */
+.layout {
+  position: relative;
+  z-index: 3;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: clamp(var(--space-8), 6vw, var(--space-16));
+  gap: clamp(40px, 7vw, 96px);
   align-items: center;
 }
 
 @media (max-width: 860px) {
-  .HomeServiceAIDiag_layout {
-    grid-template-columns: 1fr;
-  }
+  .layout { grid-template-columns: 1fr; }
 }
 
-/* ── Copy ── */
-.HomeServiceAIDiag_copy {
+/* ─── Visual (left) — phone mockup ─── */
+.visual {
+  display: flex;
+  justify-content: center;
   opacity: 0;
-  transform: translateX(-30px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
+  transform: translateX(-28px);
+  transition: opacity 0.65s ease 0.12s, transform 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.12s;
 }
 
-.HomeServiceAIDiag--visible .HomeServiceAIDiag_copy {
+.wrap--visible .visual {
   opacity: 1;
   transform: translateX(0);
 }
 
-.HomeServiceAIDiag_badge {
-  display: inline-block;
-  padding: 4px 14px;
-  border-radius: 999px;
-  background: rgba(192, 132, 252, 0.15);
-  border: 1px solid rgba(192, 132, 252, 0.45);
-  color: #c084fc;
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  margin-bottom: var(--space-4);
-}
-
-.HomeServiceAIDiag_title {
-  font-family: var(--font-heading);
-  font-size: clamp(2.2rem, 5.5vw, 4rem);
-  font-weight: 900;
-  line-height: 1.15;
-  letter-spacing: -0.03em;
-  color: #fff;
-  margin: 0 0 var(--space-5);
-}
-
-.HomeServiceAIDiag_titleAccent {
-  color: #c084fc;
-  text-shadow: 0 0 40px rgba(192, 132, 252, 0.7);
-}
-
-.HomeServiceAIDiag_desc {
-  font-size: 0.92rem;
-  line-height: 1.85;
-  color: rgba(255, 255, 255, 0.6);
-  margin: 0 0 var(--space-7);
-}
-
-/* Stats */
-.HomeServiceAIDiag_stats {
-  display: flex;
-  gap: var(--space-7);
-  margin-bottom: var(--space-7);
-  flex-wrap: wrap;
-}
-
-.HomeServiceAIDiag_stat {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-}
-
-.HomeServiceAIDiag_statValue {
-  font-family: var(--font-heading);
-  font-size: clamp(1.8rem, 4vw, 2.5rem);
-  font-weight: 900;
-  line-height: 1;
-  color: #c084fc;
-  text-shadow: 0 0 20px rgba(192, 132, 252, 0.6);
-}
-
-.HomeServiceAIDiag_statLabel {
-  font-size: 0.72rem;
-  color: rgba(255, 255, 255, 0.45);
-  letter-spacing: 0.06em;
-}
-
-/* CTA */
-.HomeServiceAIDiag_cta {
-  display: flex;
-  gap: var(--space-3);
-  flex-wrap: wrap;
-}
-
-/* ── Phone Mockup ── */
-.HomeServiceAIDiag_mockupWrap {
+.mockupWrap {
   position: relative;
-  display: flex;
-  justify-content: center;
-  opacity: 0;
-  transform: translateX(30px) rotate(3deg);
-  transition: opacity 0.7s ease 0.15s, transform 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.15s;
 }
 
-.HomeServiceAIDiag--visible .HomeServiceAIDiag_mockupWrap {
-  opacity: 1;
-  transform: translateX(0) rotate(3deg);
-}
-
-.HomeServiceAIDiag--visible .HomeServiceAIDiag_mockupWrap:hover {
-  transform: translateX(0) rotate(0deg) scale(1.02);
-}
-
-.HomeServiceAIDiag_mockup {
+.mockup {
   width: 220px;
-  background: #0d0f1a;
+  background: #0a0c1c;
   border-radius: 28px;
   overflow: hidden;
-  border: 2px solid rgba(192, 132, 252, 0.25);
+  border: 2px solid rgba(192, 132, 252, 0.22);
   box-shadow:
-    0 0 0 6px rgba(192, 132, 252, 0.06),
+    0 0 0 6px rgba(192, 132, 252, 0.05),
     0 24px 60px rgba(0, 0, 0, 0.5),
-    0 0 80px rgba(192, 132, 252, 0.15);
+    0 0 80px rgba(192, 132, 252, 0.12);
+  transform: rotate(3deg);
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Top notch bar */
-.HomeServiceAIDiag_mockupBar {
+.mockup:hover {
+  transform: rotate(0deg) scale(1.02);
+}
+
+.mockupBar {
   height: 26px;
-  background: #0a0b14;
+  background: #080a18;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
 }
 
-.HomeServiceAIDiag_mockupCamera {
-  width: 60px;
+.mockupCamera {
+  width: 58px;
   height: 8px;
-  background: #1a1c28;
+  background: #14172a;
   border-radius: 999px;
 }
 
-/* Screen */
-.HomeServiceAIDiag_mockupScreen {
+.mockupScreen {
   position: relative;
   width: 100%;
   height: 400px;
   overflow: hidden;
 }
 
-.HomeServiceAIDiag_mockupImg {
+.mockupImg {
   object-fit: cover;
   object-position: top center;
 }
 
 /* Floating score badge */
-.HomeServiceAIDiag_scoreBadge {
+.scoreBadge {
   position: absolute;
-  bottom: 32px;
-  right: -16px;
-  background: rgba(10, 12, 22, 0.92);
-  border: 1px solid rgba(0, 212, 255, 0.4);
+  bottom: 28px;
+  right: -18px;
+  background: rgba(8, 10, 24, 0.92);
+  border: 1px solid rgba(0, 212, 255, 0.35);
   border-radius: 8px;
   padding: 10px 14px;
   display: flex;
   flex-direction: column;
   gap: 3px;
-  box-shadow: 0 8px 30px rgba(0, 212, 255, 0.2);
+  box-shadow: 0 8px 28px rgba(0, 212, 255, 0.18);
   backdrop-filter: blur(8px);
   animation: badgePulse 3s ease-in-out infinite;
 }
 
 @keyframes badgePulse {
-  0%, 100% { box-shadow: 0 8px 30px rgba(0, 212, 255, 0.2); }
-  50% { box-shadow: 0 8px 40px rgba(0, 212, 255, 0.4); }
+  0%, 100% { box-shadow: 0 8px 28px rgba(0, 212, 255, 0.18); }
+  50% { box-shadow: 0 8px 40px rgba(0, 212, 255, 0.38); }
 }
 
-.HomeServiceAIDiag_scoreBadge_label {
-  font-size: 0.65rem;
-  color: rgba(255, 255, 255, 0.5);
+.scoreBadge_label {
+  font-size: 0.63rem;
+  color: rgba(255, 255, 255, 0.45);
   letter-spacing: 0.06em;
 }
 
-.HomeServiceAIDiag_scoreBadge_value {
+.scoreBadge_value {
   font-family: var(--font-heading);
   font-size: 2rem;
   font-weight: 900;
   color: #00D4FF;
   line-height: 1;
-  text-shadow: 0 0 20px rgba(0, 212, 255, 0.8);
+  text-shadow: 0 0 18px rgba(0, 212, 255, 0.8);
 }
 
-.HomeServiceAIDiag_scoreBadge_status {
-  font-size: 0.65rem;
+.scoreBadge_status {
+  font-size: 0.63rem;
   color: #00E87A;
   font-weight: 600;
 }
 
+/* ─── Copy (right) ─── */
+.copy {
+  opacity: 0;
+  transform: translateX(28px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+.wrap--visible .copy {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Badge — same sizing as LP section */
+.badge {
+  display: inline-block;
+  padding: 4px 14px;
+  border-radius: 999px;
+  background: rgba(192, 132, 252, 0.12);
+  border: 1px solid rgba(192, 132, 252, 0.38);
+  color: #c084fc;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+/* Title — same sizing as LP */
+.title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.6rem, 6vw, 4.5rem);
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  color: #fff;
+  margin: 0 0 12px;
+}
+
+.titleAccent {
+  color: #c084fc;
+  text-shadow: 0 0 30px rgba(192, 132, 252, 0.7), 0 0 70px rgba(192, 132, 252, 0.3);
+}
+
+/* Tagline — same sizing as LP */
+.tagline {
+  font-family: var(--font-heading);
+  font-size: clamp(1rem, 2.4vw, 1.3rem);
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.75);
+  letter-spacing: 0.05em;
+  margin: 0 0 16px;
+}
+
+.desc {
+  font-size: 0.9rem;
+  line-height: 1.85;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0 0 28px;
+}
+
+/* Stats — same sizing as LP */
+.stats {
+  display: flex;
+  gap: clamp(20px, 5vw, 40px);
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.statValue {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  font-weight: 900;
+  line-height: 1;
+  color: #c084fc;
+  text-shadow: 0 0 18px rgba(192, 132, 252, 0.55);
+}
+
+.statLabel {
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.4);
+  letter-spacing: 0.08em;
+}
+
+.cta {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* ─── Mobile ─── */
 @media (max-width: 860px) {
-  .HomeServiceAIDiag_mockupWrap {
-    order: -1;
-    transform: translateX(0) rotate(3deg);
-  }
-  .HomeServiceAIDiag--visible .HomeServiceAIDiag_mockupWrap {
-    transform: translateX(0) rotate(2deg);
-  }
-  .HomeServiceAIDiag_mockup {
-    width: 180px;
-  }
-  .HomeServiceAIDiag_mockupScreen {
-    height: 320px;
-  }
+  .visual { order: -1; }
+  .mockup { width: 180px; }
+  .mockupScreen { height: 320px; }
 }
 
 @media (max-width: 480px) {
-  .HomeServiceAIDiag_cta {
-    flex-direction: column;
-    align-items: flex-start;
-  }
+  .cta { flex-direction: column; }
+  .stats { flex-wrap: wrap; gap: 16px; }
 }

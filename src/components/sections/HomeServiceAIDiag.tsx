@@ -22,77 +22,65 @@ export default function HomeServiceAIDiag() {
   return (
     <section
       ref={ref}
-      className={`${styles.HomeServiceAIDiag} ${isVisible ? styles['HomeServiceAIDiag--visible'] : ''}`}
+      className={`${styles.wrap} ${isVisible ? styles['wrap--visible'] : ''}`}
       aria-label="AI診断・データ収集サービス"
     >
-      {/* Data network canvas */}
-      <div className={styles.HomeServiceAIDiag_canvas} aria-hidden="true">
+      <div className={styles.canvas} aria-hidden="true">
         <DataNodes density={0.9} />
       </div>
-
-      {/* Dark vignette */}
-      <div className={styles.HomeServiceAIDiag_vignette} aria-hidden="true" />
+      <div className={styles.vignette} aria-hidden="true" />
 
       <Center>
-        <div className={styles.HomeServiceAIDiag_layout}>
+        <div className={styles.layout}>
 
-          {/* ── Left: copy ── */}
-          <div className={styles.HomeServiceAIDiag_copy}>
-            <div className={styles.HomeServiceAIDiag_badge}>AI × Data</div>
-
-            <h2 className={styles.HomeServiceAIDiag_title}>
-              診断で集める。<br />
-              <span className={styles.HomeServiceAIDiag_titleAccent}>データ</span>で育てる。
-            </h2>
-
-            <p className={styles.HomeServiceAIDiag_desc}>
-              ユーザーに価値ある診断体験を提供しながら、
-              属性・症状・行動データを自動収集。
-              顧客理解とマーケティング精度を同時に高める、
-              次世代のデータ収集モデルです。
-            </p>
-
-            <div className={styles.HomeServiceAIDiag_stats}>
-              {stats.map((s) => (
-                <div key={s.label} className={styles.HomeServiceAIDiag_stat}>
-                  <span className={styles.HomeServiceAIDiag_statValue}>{s.value}</span>
-                  <span className={styles.HomeServiceAIDiag_statLabel}>{s.label}</span>
+          {/* Visual — left: phone mockup */}
+          <div className={styles.visual} aria-hidden="true">
+            <div className={styles.mockupWrap}>
+              <div className={styles.mockup}>
+                <div className={styles.mockupBar}>
+                  <span className={styles.mockupCamera} />
                 </div>
-              ))}
-            </div>
-
-            <div className={styles.HomeServiceAIDiag_cta}>
-              <Button href="/services/ai-diagnosis" variant="default" size="lg">
-                詳しく見る
-              </Button>
-              <Button href="/contact" variant="outline" size="lg">
-                相談する
-              </Button>
+                <div className={styles.mockupScreen}>
+                  <Image
+                    src="/works/nail-seitai.jpg"
+                    alt="爪整体 AI診断サービス"
+                    fill
+                    className={styles.mockupImg}
+                  />
+                </div>
+              </div>
+              <div className={styles.scoreBadge}>
+                <span className={styles.scoreBadge_label}>AI診断スコア</span>
+                <span className={styles.scoreBadge_value}>92</span>
+                <span className={styles.scoreBadge_status}>健康状態：良好</span>
+              </div>
             </div>
           </div>
 
-          {/* ── Right: phone mockup ── */}
-          <div className={styles.HomeServiceAIDiag_mockupWrap} aria-hidden="true">
-            <div className={styles.HomeServiceAIDiag_mockup}>
-              {/* Phone notch */}
-              <div className={styles.HomeServiceAIDiag_mockupBar}>
-                <span className={styles.HomeServiceAIDiag_mockupCamera} />
-              </div>
-              {/* Screen */}
-              <div className={styles.HomeServiceAIDiag_mockupScreen}>
-                <Image
-                  src="/works/nail-seitai.jpg"
-                  alt="爪整体 AI診断サービス"
-                  fill
-                  className={styles.HomeServiceAIDiag_mockupImg}
-                />
-              </div>
+          {/* Copy — right */}
+          <div className={styles.copy}>
+            <div className={styles.badge}>AI × Data</div>
+            <h2 className={styles.title}>
+              診断で集める。<br />
+              <span className={styles.titleAccent}>データ</span>で育てる。
+            </h2>
+            <p className={styles.tagline}>ユーザーに価値を。ビジネスに洞察を。</p>
+            <p className={styles.desc}>
+              ユーザーに価値ある診断体験を提供しながら、
+              属性・症状・行動データを自動収集。
+              顧客理解とマーケティング精度を同時に高める次世代のデータ収集モデルです。
+            </p>
+            <div className={styles.stats}>
+              {stats.map((s) => (
+                <div key={s.label} className={styles.stat}>
+                  <span className={styles.statValue}>{s.value}</span>
+                  <span className={styles.statLabel}>{s.label}</span>
+                </div>
+              ))}
             </div>
-            {/* Score badge floating over mockup */}
-            <div className={styles.HomeServiceAIDiag_scoreBadge}>
-              <span className={styles.HomeServiceAIDiag_scoreBadge_label}>AI診断スコア</span>
-              <span className={styles.HomeServiceAIDiag_scoreBadge_value}>92</span>
-              <span className={styles.HomeServiceAIDiag_scoreBadge_status}>健康状態：良好</span>
+            <div className={styles.cta}>
+              <Button href="/services/ai-diagnosis" variant="default" size="lg">詳しく見る</Button>
+              <Button href="/contact" variant="outline" size="lg">相談する</Button>
             </div>
           </div>
 

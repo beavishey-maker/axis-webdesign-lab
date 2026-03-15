@@ -1,157 +1,286 @@
-.HomeServiceLP {
+/* ─── Section shell ─── */
+.wrap {
   position: relative;
   overflow: hidden;
-  background: #04050f;
-  padding: var(--space-16) 0;
-  min-height: 540px;
+  background: #060400;          /* warm dark — clearly different from AI's cool dark */
+  padding: clamp(80px, 10vw, 120px) 0;
   display: flex;
   align-items: center;
 }
 
-/* Canvas fills the whole section */
-.HomeServiceLP_canvas {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  opacity: 0.65;
-}
-
-/* Dark radial vignette so text stays readable */
-.HomeServiceLP::before {
+/* Subtle amber glow bleeding from top-left */
+.wrap::before {
   content: '';
   position: absolute;
   inset: 0;
   z-index: 1;
-  background: radial-gradient(
-    ellipse 70% 80% at 50% 50%,
-    rgba(4, 5, 15, 0.6) 0%,
-    rgba(4, 5, 15, 0.9) 70%,
-    #04050f 100%
-  );
+  background:
+    radial-gradient(ellipse 60% 70% at -5% 0%, rgba(255, 180, 0, 0.08) 0%, transparent 65%),
+    radial-gradient(ellipse 80% 80% at 50% 50%, rgba(6, 4, 0, 0.5) 0%, rgba(6, 4, 0, 0.92) 100%);
   pointer-events: none;
 }
 
-.HomeServiceLP_inner {
-  position: relative;
+/* Canvas: ambient texture, not dominant */
+.canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.35;
+}
+
+/* Vignette — edges fade to section bg */
+.vignette {
+  position: absolute;
+  inset: 0;
   z-index: 2;
-  text-align: center;
-  max-width: 640px;
-  margin: 0 auto;
+  background:
+    linear-gradient(to right, #060400 0%, transparent 15%, transparent 85%, #060400 100%),
+    linear-gradient(to bottom, #060400 0%, transparent 12%, transparent 88%, #060400 100%);
+  pointer-events: none;
+}
+
+/* ─── Split layout ─── */
+.layout {
+  position: relative;
+  z-index: 3;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(40px, 7vw, 96px);
+  align-items: center;
+}
+
+@media (max-width: 860px) {
+  .layout { grid-template-columns: 1fr; }
+}
+
+/* ─── Copy (left) ─── */
+.copy {
   opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
+  transform: translateX(-28px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
 }
 
-.HomeServiceLP--visible .HomeServiceLP_inner {
+.wrap--visible .copy {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateX(0);
 }
 
-/* Badge */
-.HomeServiceLP_badge {
+.badge {
   display: inline-block;
   padding: 4px 14px;
   border-radius: 999px;
-  background: rgba(255, 217, 0, 0.15);
-  border: 1px solid rgba(255, 217, 0, 0.5);
+  background: rgba(255, 217, 0, 0.12);
+  border: 1px solid rgba(255, 217, 0, 0.4);
   color: #FFD900;
   font-size: 0.7rem;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  margin-bottom: var(--space-4);
+  margin-bottom: 20px;
 }
 
-/* Title */
-.HomeServiceLP_title {
+.title {
   font-family: var(--font-heading);
-  font-size: clamp(3.5rem, 12vw, 8rem);
+  font-size: clamp(2.6rem, 6vw, 4.5rem);
   font-weight: 900;
-  line-height: 1;
+  line-height: 1.05;
   letter-spacing: -0.04em;
-  margin: 0 0 var(--space-3);
-  display: flex;
-  align-items: baseline;
-  justify-content: center;
-  gap: 0.15em;
+  color: #fff;
+  margin: 0 0 12px;
 }
 
-.HomeServiceLP_titleEn {
+.titleAccent {
   color: #FFD900;
-  text-shadow:
-    0 0 40px rgba(255, 217, 0, 0.8),
-    0 0 80px rgba(255, 217, 0, 0.4);
+  text-shadow: 0 0 30px rgba(255, 217, 0, 0.7), 0 0 70px rgba(255, 217, 0, 0.3);
 }
 
-.HomeServiceLP_titleJa {
-  color: #ffffff;
-  text-shadow:
-    0 0 40px rgba(255, 255, 255, 0.4),
-    0 0 80px rgba(255, 255, 255, 0.2);
-}
-
-/* Tagline */
-.HomeServiceLP_tagline {
+.tagline {
   font-family: var(--font-heading);
-  font-size: clamp(1.1rem, 3vw, 1.5rem);
+  font-size: clamp(1rem, 2.4vw, 1.3rem);
   font-weight: 700;
-  color: rgba(255, 255, 255, 0.9);
-  letter-spacing: 0.06em;
-  margin: 0 0 var(--space-4);
+  color: rgba(255, 255, 255, 0.75);
+  letter-spacing: 0.05em;
+  margin: 0 0 16px;
 }
 
-/* Description */
-.HomeServiceLP_desc {
-  font-size: 0.95rem;
-  line-height: 1.8;
-  color: rgba(255, 255, 255, 0.65);
-  margin: 0 0 var(--space-8);
+.desc {
+  font-size: 0.9rem;
+  line-height: 1.85;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0 0 28px;
 }
 
-/* Stats row */
-.HomeServiceLP_stats {
+.stats {
   display: flex;
-  justify-content: center;
-  gap: clamp(var(--space-6), 6vw, var(--space-12));
-  margin-bottom: var(--space-8);
+  gap: clamp(20px, 5vw, 40px);
+  margin-bottom: 28px;
 }
 
-.HomeServiceLP_stat {
+.stat {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 4px;
+  gap: 3px;
 }
 
-.HomeServiceLP_statValue {
+.statValue {
   font-family: var(--font-heading);
-  font-size: clamp(1.8rem, 5vw, 2.8rem);
+  font-size: clamp(2rem, 4.5vw, 3rem);
   font-weight: 900;
-  color: #FFD900;
   line-height: 1;
-  text-shadow: 0 0 20px rgba(255, 217, 0, 0.6);
+  color: #FFD900;
+  text-shadow: 0 0 18px rgba(255, 217, 0, 0.55);
 }
 
-.HomeServiceLP_statLabel {
+.statLabel {
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.4);
+  letter-spacing: 0.08em;
+}
+
+.cta {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* ─── Visual (right) — timeline card ─── */
+.visual {
+  display: flex;
+  justify-content: center;
+  opacity: 0;
+  transform: translateX(28px);
+  transition: opacity 0.65s ease 0.12s, transform 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.12s;
+}
+
+.wrap--visible .visual {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.card {
+  width: 100%;
+  max-width: 360px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 217, 0, 0.15);
+  border-top: 3px solid #FFD900;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.card_head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.card_dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #FFD900;
+  box-shadow: 0 0 8px rgba(255, 217, 0, 0.8);
+  animation: dotPulse 2s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+@keyframes dotPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}
+
+.card_headLabel {
   font-size: 0.75rem;
+  font-weight: 700;
   color: rgba(255, 255, 255, 0.5);
   letter-spacing: 0.08em;
 }
 
-/* CTA row */
-.HomeServiceLP_cta {
-  display: flex;
-  gap: var(--space-3);
-  justify-content: center;
-  flex-wrap: wrap;
+/* Timeline list */
+.timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-@media (max-width: 640px) {
-  .HomeServiceLP_stats {
-    gap: var(--space-5);
-  }
-  .HomeServiceLP_cta {
-    flex-direction: column;
-    align-items: center;
-  }
+.timeline_item {
+  display: grid;
+  grid-template-columns: 18px 52px 1fr;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  position: relative;
+}
+
+.timeline_item:last-child {
+  border-bottom: none;
+}
+
+/* Connector line between nodes */
+.timeline_item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  left: 28px;
+  top: calc(50% + 6px);
+  width: 1px;
+  height: calc(100% - 6px);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Node dot */
+.timeline_node {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  flex-shrink: 0;
+}
+
+.timeline_item--done .timeline_node {
+  background: #FFD900;
+  border-color: #FFD900;
+  box-shadow: 0 0 12px rgba(255, 217, 0, 0.9), 0 0 28px rgba(255, 217, 0, 0.4);
+  animation: donePulse 2.4s ease-in-out infinite;
+}
+
+@keyframes donePulse {
+  0%, 100% { box-shadow: 0 0 12px rgba(255, 217, 0, 0.9), 0 0 28px rgba(255, 217, 0, 0.4); }
+  50% { box-shadow: 0 0 20px rgba(255, 217, 0, 1), 0 0 50px rgba(255, 217, 0, 0.6); }
+}
+
+.timeline_time {
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.35);
+  font-variant-numeric: tabular-nums;
+}
+
+.timeline_item--done .timeline_time {
+  color: #FFD900;
+}
+
+.timeline_label {
+  font-size: 0.88rem;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.4;
+}
+
+.timeline_item--done .timeline_label {
+  color: #fff;
+  font-weight: 600;
+}
+
+/* ─── Mobile ─── */
+@media (max-width: 860px) {
+  .visual { order: -1; }
+  .card { max-width: 400px; }
+}
+
+@media (max-width: 480px) {
+  .cta { flex-direction: column; }
+  .stats { flex-wrap: wrap; gap: 16px; }
 }
