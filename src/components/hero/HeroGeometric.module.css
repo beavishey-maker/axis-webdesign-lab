@@ -1,0 +1,157 @@
+.HeroGeometric {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* ========== Keyframes ========== */
+
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  33%       { transform: translateY(-30px) rotate(3deg); }
+  66%       { transform: translateY(-15px) rotate(-2deg); }
+}
+
+@keyframes floatMedium {
+  0%, 100% { transform: translateY(0) translateX(0); }
+  50%       { transform: translateY(-40px) translateX(20px); }
+}
+
+@keyframes rotateSlow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes pulseDot {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50%       { opacity: 0.8; transform: scale(1.4); }
+}
+
+@keyframes drawLine {
+  0%   { transform: scaleX(0); opacity: 0; }
+  20%  { opacity: 1; }
+  100% { transform: scaleX(1); opacity: 0.15; }
+}
+
+@keyframes fadeInScale {
+  from { opacity: 0; transform: scale(0.6); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* ========== Shapes ========== */
+
+.shape {
+  position: absolute;
+  border-radius: 50%;
+}
+
+/* 大きい薄い円（右上） */
+.circle1 {
+  width: 600px;
+  height: 600px;
+  border: 1px solid rgba(45, 74, 255, 0.2);
+  top: -200px;
+  right: -150px;
+  animation: rotateSlow 40s linear infinite;
+}
+
+/* 中くらいの円（左中） */
+.circle2 {
+  width: 300px;
+  height: 300px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  bottom: 10%;
+  left: -80px;
+  animation: floatSlow 12s ease-in-out infinite;
+}
+
+/* 小さい塗り円（右下） */
+.circle3 {
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle, rgba(45, 74, 255, 0.25) 0%, transparent 70%);
+  bottom: 20%;
+  right: 10%;
+  animation: floatMedium 8s ease-in-out infinite;
+}
+
+/* 横線1 */
+.line1 {
+  border-radius: 0;
+  width: 400px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(255,255,255,0.1), transparent);
+  top: 30%;
+  right: 5%;
+  transform-origin: left;
+  animation: drawLine 3s ease-out 0.5s forwards;
+  opacity: 0;
+}
+
+/* 斜め線 */
+.line2 {
+  border-radius: 0;
+  width: 250px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(45,74,255,0.3), transparent);
+  top: 60%;
+  left: 10%;
+  transform: rotate(-25deg);
+  transform-origin: left;
+  animation: drawLine 2s ease-out 1s forwards;
+  opacity: 0;
+}
+
+/* 小さい四角形1 */
+.square1 {
+  border-radius: 4px;
+  width: 40px;
+  height: 40px;
+  border: 1.5px solid rgba(45, 74, 255, 0.4);
+  top: 25%;
+  right: 20%;
+  animation: floatSlow 10s ease-in-out infinite, rotateSlow 20s linear infinite;
+}
+
+/* 小さい四角形2 */
+.square2 {
+  border-radius: 2px;
+  width: 18px;
+  height: 18px;
+  background: rgba(45, 74, 255, 0.3);
+  top: 55%;
+  right: 30%;
+  animation: floatMedium 7s ease-in-out infinite 1.5s;
+}
+
+/* ドット群 */
+.dots {
+  position: absolute;
+  top: 15%;
+  left: 5%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  animation: pulseDot 3s ease-in-out infinite;
+}
+
+/* 薄いグリッド */
+.grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size: 80px 80px;
+  mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 0%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 0%, transparent 100%);
+}

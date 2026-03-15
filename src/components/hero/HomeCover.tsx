@@ -2,6 +2,7 @@
 import { useEffect, useRef } from 'react'
 import styles from './HomeCover.module.css'
 import HeroCopy from './HeroCopy'
+import HeroGeometric from './HeroGeometric'
 import Button from '@/components/ui/Button'
 
 export default function HomeCover() {
@@ -45,6 +46,9 @@ export default function HomeCover() {
 
       {/* Overlay */}
       <div className={styles.HomeCover_overlay} aria-hidden="true" />
+
+      {/* Geometric decorations */}
+      <HeroGeometric />
 
       {/* Content */}
       <div className={styles.HomeCover_content}>

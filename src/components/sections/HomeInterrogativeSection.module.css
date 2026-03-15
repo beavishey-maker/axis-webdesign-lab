@@ -20,19 +20,21 @@
   }
 }
 
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
 .HomeInterrogative_item {
   padding: var(--space-7);
   background: var(--color-bg-white);
   border-radius: 16px;
   border: 1px solid var(--color-border);
   opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
 .HomeInterrogative--visible .HomeInterrogative_item {
-  opacity: 1;
-  transform: translateY(0);
+  animation: fadeInUp 0.6s ease forwards;
 }
 
 .HomeInterrogative_question {
