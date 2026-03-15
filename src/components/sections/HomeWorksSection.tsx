@@ -30,7 +30,18 @@ export default function HomeWorksSection({ works }: HomeWorksSectionProps) {
             <h2 className={styles.HomeWorksSection_title}>Selected Works</h2>
           </div>
           <div className={styles.HomeWorksSection_mockup} aria-hidden="true">
-            <Image src="/9.png" alt="" fill className={styles.HomeWorksSection_mockupImg} />
+            {/* ブラウザ風クロム */}
+            <div className={styles.HomeWorksSection_mockupChrome}>
+              <span /><span /><span />
+            </div>
+            <div className={styles.HomeWorksSection_mockupScreen}>
+              <Image
+                src="/works/bakerysoleil.jpg"
+                alt=""
+                fill
+                className={styles.HomeWorksSection_mockupImg}
+              />
+            </div>
           </div>
           <Button href="/works" variant="outline" size="md">
             すべての実績
