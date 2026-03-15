@@ -7,6 +7,8 @@ import HomeSnsSection from '@/components/sections/HomeSnsSection'
 import HomeStats from '@/components/sections/HomeStats'
 import HomeInterrogativeSection from '@/components/sections/HomeInterrogativeSection'
 import HomeServiceTeaser from '@/components/sections/HomeServiceTeaser'
+import HomeServiceLP from '@/components/sections/HomeServiceLP'
+import HomeServiceAIDiag from '@/components/sections/HomeServiceAIDiag'
 import BackdropWithScrollStatic from '@/components/sections/BackdropWithScrollStatic'
 import HomeWorksSection from '@/components/sections/HomeWorksSection'
 import HomeProductTeaser from '@/components/sections/HomeProductTeaser'
@@ -77,6 +79,14 @@ export default function HomePage() {
 
         {/* 6サービス紹介 */}
         <HomeServiceTeaser />
+
+        {/* 音速LP — 高速LP制作サービス */}
+        <HomeGlowDivider color="#FFD900" />
+        <HomeServiceLP />
+
+        {/* AI診断 × データ収集サービス */}
+        <HomeGlowDivider color="#c084fc" />
+        <HomeServiceAIDiag />
 
         {/* リップルアニメーション背景CTA */}
         <BackdropWithScrollStatic />

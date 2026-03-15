@@ -1,0 +1,572 @@
+/* ─── Hero ─── */
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  background: #05060f;
+  overflow: hidden;
+}
+
+.heroCanvas {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.65;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: radial-gradient(
+    ellipse 80% 90% at 50% 60%,
+    rgba(5, 6, 15, 0.5) 0%,
+    rgba(5, 6, 15, 0.85) 60%,
+    #05060f 100%
+  );
+}
+
+.heroInner {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: var(--space-16) 0 var(--space-10);
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.heroBadge {
+  display: inline-block;
+  padding: 4px 16px;
+  border-radius: 999px;
+  background: rgba(192, 132, 252, 0.15);
+  border: 1px solid rgba(192, 132, 252, 0.4);
+  color: #c084fc;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-5);
+}
+
+.heroTitle {
+  font-family: var(--font-heading);
+  font-size: clamp(3.5rem, 12vw, 9rem);
+  font-weight: 900;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  color: #fff;
+  margin: 0 0 var(--space-5);
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.15em;
+  flex-wrap: wrap;
+}
+
+.heroTitlePurple {
+  color: #c084fc;
+  text-shadow:
+    0 0 40px rgba(192, 132, 252, 0.8),
+    0 0 100px rgba(192, 132, 252, 0.4);
+}
+
+.heroTitleSep {
+  color: rgba(255,255,255,0.3);
+  font-size: 0.6em;
+}
+
+.heroTagline {
+  font-family: var(--font-heading);
+  font-size: clamp(1.1rem, 3vw, 1.6rem);
+  font-weight: 700;
+  color: rgba(255,255,255,0.85);
+  letter-spacing: 0.06em;
+  margin: 0 0 var(--space-5);
+}
+
+.heroSub {
+  font-size: clamp(0.88rem, 2vw, 1rem);
+  line-height: 1.95;
+  color: rgba(255,255,255,0.55);
+  margin: 0 auto var(--space-8);
+  max-width: 540px;
+}
+
+.heroCta {
+  display: flex;
+  gap: var(--space-3);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ─── Shared ─── */
+.section {
+  padding: var(--space-16) 0;
+  background: var(--color-bg-white);
+}
+
+.sectionDark {
+  padding: var(--space-16) 0;
+  background: #05060f;
+}
+
+.subhead {
+  margin-bottom: var(--space-2) !important;
+}
+
+.sectionTitle {
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  font-weight: 800;
+  color: var(--color-text);
+  margin: 0 0 var(--space-10);
+  letter-spacing: -0.03em;
+}
+
+.sectionTitleLight {
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  font-weight: 800;
+  color: #fff;
+  margin: 0 0 var(--space-10);
+  letter-spacing: -0.03em;
+}
+
+/* ─── Win-Win Merits ─── */
+.meritsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-6);
+}
+
+.meritCard {
+  padding: var(--space-7);
+  border-radius: 4px;
+  border-top: 4px solid var(--mc, var(--color-brand));
+  background: var(--color-bg);
+}
+
+.meritTitle {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0 0 var(--space-5);
+}
+
+.meritList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.meritItem {
+  display: flex;
+  gap: var(--space-3);
+  align-items: flex-start;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+/* ─── Steps ─── */
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-5);
+}
+
+@media (max-width: 700px) {
+  .steps { grid-template-columns: 1fr; }
+}
+
+.step {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-top: 3px solid var(--sc, var(--color-brand));
+  border-radius: 4px;
+  padding: var(--space-6);
+}
+
+.stepNum {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  font-weight: 900;
+  color: var(--sc, var(--color-brand));
+  opacity: 0.22;
+  line-height: 1;
+  margin-bottom: var(--space-3);
+}
+
+.stepTitle {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 var(--space-2);
+}
+
+.stepDesc {
+  font-size: 0.875rem;
+  line-height: 1.75;
+  color: rgba(255,255,255,0.5);
+  margin: 0;
+}
+
+/* ─── Use Cases ─── */
+.casesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: var(--space-5);
+}
+
+.caseCard {
+  padding: var(--space-6);
+  border-radius: 4px;
+  border-left: 4px solid var(--cc, var(--color-brand));
+  background: var(--color-bg);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.caseCard:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 28px color-mix(in srgb, var(--cc, var(--color-brand)) 18%, transparent);
+}
+
+.caseIcon {
+  font-size: 1.75rem;
+  display: block;
+  margin-bottom: var(--space-3);
+}
+
+.caseTitle {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0 0 var(--space-2);
+}
+
+.caseDesc {
+  font-size: 0.85rem;
+  line-height: 1.7;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+/* ─── Case Study ─── */
+.caseStudy {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: clamp(var(--space-8), 6vw, var(--space-14));
+  align-items: center;
+}
+
+@media (max-width: 800px) {
+  .caseStudy { grid-template-columns: 1fr; }
+}
+
+.caseStudyVisual {
+  display: flex;
+  justify-content: center;
+}
+
+.caseStudyPhone {
+  width: 230px;
+  background: #0a0b14;
+  border-radius: 28px;
+  overflow: hidden;
+  border: 2px solid rgba(192, 132, 252, 0.25);
+  box-shadow:
+    0 0 0 6px rgba(192, 132, 252, 0.06),
+    0 20px 60px rgba(0, 0, 0, 0.6),
+    0 0 80px rgba(192, 132, 252, 0.2);
+  transform: rotate(-2deg);
+  transition: transform 0.4s ease;
+}
+
+.caseStudyPhone:hover {
+  transform: rotate(0deg) scale(1.02);
+}
+
+.caseStudyPhoneBar {
+  height: 26px;
+  background: #080910;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.caseStudyPhoneCamera {
+  width: 56px;
+  height: 8px;
+  background: #16182a;
+  border-radius: 999px;
+}
+
+.caseStudyPhoneScreen {
+  position: relative;
+  width: 100%;
+  height: 420px;
+  overflow: hidden;
+}
+
+.caseStudyImg {
+  object-fit: cover;
+  object-position: top center;
+}
+
+.caseStudyContent {
+  color: #fff;
+}
+
+.caseStudyBadge {
+  display: inline-block;
+  padding: 3px 12px;
+  border-radius: 999px;
+  background: rgba(192, 132, 252, 0.15);
+  border: 1px solid rgba(192, 132, 252, 0.4);
+  color: #c084fc;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  margin-bottom: var(--space-4);
+}
+
+.caseStudyTitle {
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  font-weight: 800;
+  line-height: 1.25;
+  letter-spacing: -0.03em;
+  margin: 0 0 var(--space-4);
+}
+
+.caseStudyDesc {
+  font-size: 0.9rem;
+  line-height: 1.85;
+  color: rgba(255,255,255,0.55);
+  margin: 0 0 var(--space-6);
+}
+
+.caseStudyStats {
+  display: flex;
+  gap: var(--space-6);
+  margin-bottom: var(--space-6);
+  flex-wrap: wrap;
+}
+
+.caseStudyStat {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.caseStudyStat span {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #c084fc;
+  line-height: 1;
+}
+
+.caseStudyStat small {
+  font-size: 0.7rem;
+  color: rgba(255,255,255,0.4);
+}
+
+/* ─── Features ─── */
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-5);
+}
+
+.featureCard {
+  padding: var(--space-6);
+  border-radius: 4px;
+  background: var(--color-bg);
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.featureCard:hover {
+  border-bottom-color: #c084fc;
+  transform: translateY(-2px);
+}
+
+.featureNum {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #c084fc;
+  opacity: 0.2;
+  line-height: 1;
+  margin-bottom: var(--space-2);
+}
+
+.featureTitle {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0 0 var(--space-2);
+}
+
+.featureDesc {
+  font-size: 0.875rem;
+  line-height: 1.75;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+/* ─── Plans ─── */
+.plansGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: var(--space-5);
+  align-items: start;
+  margin-bottom: var(--space-6);
+}
+
+.planCard {
+  position: relative;
+  padding: var(--space-7) var(--space-6);
+  border-radius: 4px;
+  border-top: 4px solid var(--pc, var(--color-brand));
+  background: rgba(255,255,255,0.04);
+  border-left: 1px solid rgba(255,255,255,0.06);
+  border-right: 1px solid rgba(255,255,255,0.06);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.planCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px color-mix(in srgb, var(--pc, var(--color-brand)) 18%, transparent);
+}
+
+.planCard--featured {
+  background: rgba(192, 132, 252, 0.06);
+  border-color: rgba(192, 132, 252, 0.3);
+  border-top-color: #c084fc;
+  transform: scale(1.03);
+  box-shadow: 0 8px 40px rgba(192, 132, 252, 0.2);
+}
+
+.planCard--featured:hover {
+  transform: scale(1.03) translateY(-4px);
+}
+
+.planBadge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #c084fc;
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 3px 12px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.planName {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.5);
+  letter-spacing: 0.06em;
+}
+
+.planPrice {
+  font-family: var(--font-heading);
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: #fff;
+  line-height: 1;
+}
+
+.planNote {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: rgba(255,255,255,0.4);
+  margin-left: 4px;
+}
+
+.planFeatures {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  flex: 1;
+}
+
+.planFeature {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.55);
+  display: flex;
+  gap: var(--space-2);
+  align-items: baseline;
+}
+
+.planFeature span {
+  color: var(--pc, var(--color-brand));
+  font-weight: 700;
+  font-size: 0.75rem;
+}
+
+.plansNote {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.35);
+  text-align: center;
+}
+
+/* ─── FAQ ─── */
+.faqList {
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.faqItem {
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  padding-bottom: var(--space-5);
+}
+
+.faqQ {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0 0 var(--space-3);
+}
+
+.faqA {
+  font-size: 0.9rem;
+  line-height: 1.8;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .heroCta { flex-direction: column; align-items: center; }
+  .plansGrid { grid-template-columns: 1fr; }
+  .planCard--featured { transform: none; }
+  .planCard--featured:hover { transform: translateY(-4px); }
+  .heroTitle { flex-direction: column; gap: 0; }
+}

@@ -1,0 +1,254 @@
+.HomeServiceAIDiag {
+  position: relative;
+  overflow: hidden;
+  background: #05060f;
+  padding: var(--space-16) 0;
+  min-height: 560px;
+  display: flex;
+  align-items: center;
+}
+
+.HomeServiceAIDiag_canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.5;
+}
+
+.HomeServiceAIDiag_vignette {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    radial-gradient(ellipse 55% 100% at 20% 50%, rgba(5, 6, 15, 0.4) 0%, rgba(5, 6, 15, 0.92) 100%),
+    radial-gradient(ellipse 60% 100% at 80% 50%, rgba(5, 6, 15, 0.65) 0%, rgba(5, 6, 15, 0.95) 100%);
+  pointer-events: none;
+}
+
+/* ── Layout ── */
+.HomeServiceAIDiag_layout {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(var(--space-8), 6vw, var(--space-16));
+  align-items: center;
+}
+
+@media (max-width: 860px) {
+  .HomeServiceAIDiag_layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Copy ── */
+.HomeServiceAIDiag_copy {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.HomeServiceAIDiag--visible .HomeServiceAIDiag_copy {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.HomeServiceAIDiag_badge {
+  display: inline-block;
+  padding: 4px 14px;
+  border-radius: 999px;
+  background: rgba(192, 132, 252, 0.15);
+  border: 1px solid rgba(192, 132, 252, 0.45);
+  color: #c084fc;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-4);
+}
+
+.HomeServiceAIDiag_title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.2rem, 5.5vw, 4rem);
+  font-weight: 900;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: #fff;
+  margin: 0 0 var(--space-5);
+}
+
+.HomeServiceAIDiag_titleAccent {
+  color: #c084fc;
+  text-shadow: 0 0 40px rgba(192, 132, 252, 0.7);
+}
+
+.HomeServiceAIDiag_desc {
+  font-size: 0.92rem;
+  line-height: 1.85;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0 0 var(--space-7);
+}
+
+/* Stats */
+.HomeServiceAIDiag_stats {
+  display: flex;
+  gap: var(--space-7);
+  margin-bottom: var(--space-7);
+  flex-wrap: wrap;
+}
+
+.HomeServiceAIDiag_stat {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.HomeServiceAIDiag_statValue {
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 900;
+  line-height: 1;
+  color: #c084fc;
+  text-shadow: 0 0 20px rgba(192, 132, 252, 0.6);
+}
+
+.HomeServiceAIDiag_statLabel {
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.45);
+  letter-spacing: 0.06em;
+}
+
+/* CTA */
+.HomeServiceAIDiag_cta {
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+/* ── Phone Mockup ── */
+.HomeServiceAIDiag_mockupWrap {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  opacity: 0;
+  transform: translateX(30px) rotate(3deg);
+  transition: opacity 0.7s ease 0.15s, transform 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.15s;
+}
+
+.HomeServiceAIDiag--visible .HomeServiceAIDiag_mockupWrap {
+  opacity: 1;
+  transform: translateX(0) rotate(3deg);
+}
+
+.HomeServiceAIDiag--visible .HomeServiceAIDiag_mockupWrap:hover {
+  transform: translateX(0) rotate(0deg) scale(1.02);
+}
+
+.HomeServiceAIDiag_mockup {
+  width: 220px;
+  background: #0d0f1a;
+  border-radius: 28px;
+  overflow: hidden;
+  border: 2px solid rgba(192, 132, 252, 0.25);
+  box-shadow:
+    0 0 0 6px rgba(192, 132, 252, 0.06),
+    0 24px 60px rgba(0, 0, 0, 0.5),
+    0 0 80px rgba(192, 132, 252, 0.15);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Top notch bar */
+.HomeServiceAIDiag_mockupBar {
+  height: 26px;
+  background: #0a0b14;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.HomeServiceAIDiag_mockupCamera {
+  width: 60px;
+  height: 8px;
+  background: #1a1c28;
+  border-radius: 999px;
+}
+
+/* Screen */
+.HomeServiceAIDiag_mockupScreen {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+}
+
+.HomeServiceAIDiag_mockupImg {
+  object-fit: cover;
+  object-position: top center;
+}
+
+/* Floating score badge */
+.HomeServiceAIDiag_scoreBadge {
+  position: absolute;
+  bottom: 32px;
+  right: -16px;
+  background: rgba(10, 12, 22, 0.92);
+  border: 1px solid rgba(0, 212, 255, 0.4);
+  border-radius: 8px;
+  padding: 10px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  box-shadow: 0 8px 30px rgba(0, 212, 255, 0.2);
+  backdrop-filter: blur(8px);
+  animation: badgePulse 3s ease-in-out infinite;
+}
+
+@keyframes badgePulse {
+  0%, 100% { box-shadow: 0 8px 30px rgba(0, 212, 255, 0.2); }
+  50% { box-shadow: 0 8px 40px rgba(0, 212, 255, 0.4); }
+}
+
+.HomeServiceAIDiag_scoreBadge_label {
+  font-size: 0.65rem;
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 0.06em;
+}
+
+.HomeServiceAIDiag_scoreBadge_value {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 900;
+  color: #00D4FF;
+  line-height: 1;
+  text-shadow: 0 0 20px rgba(0, 212, 255, 0.8);
+}
+
+.HomeServiceAIDiag_scoreBadge_status {
+  font-size: 0.65rem;
+  color: #00E87A;
+  font-weight: 600;
+}
+
+@media (max-width: 860px) {
+  .HomeServiceAIDiag_mockupWrap {
+    order: -1;
+    transform: translateX(0) rotate(3deg);
+  }
+  .HomeServiceAIDiag--visible .HomeServiceAIDiag_mockupWrap {
+    transform: translateX(0) rotate(2deg);
+  }
+  .HomeServiceAIDiag_mockup {
+    width: 180px;
+  }
+  .HomeServiceAIDiag_mockupScreen {
+    height: 320px;
+  }
+}
+
+@media (max-width: 480px) {
+  .HomeServiceAIDiag_cta {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

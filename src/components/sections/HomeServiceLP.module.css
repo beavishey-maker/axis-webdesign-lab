@@ -1,0 +1,157 @@
+.HomeServiceLP {
+  position: relative;
+  overflow: hidden;
+  background: #04050f;
+  padding: var(--space-16) 0;
+  min-height: 540px;
+  display: flex;
+  align-items: center;
+}
+
+/* Canvas fills the whole section */
+.HomeServiceLP_canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.65;
+}
+
+/* Dark radial vignette so text stays readable */
+.HomeServiceLP::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: radial-gradient(
+    ellipse 70% 80% at 50% 50%,
+    rgba(4, 5, 15, 0.6) 0%,
+    rgba(4, 5, 15, 0.9) 70%,
+    #04050f 100%
+  );
+  pointer-events: none;
+}
+
+.HomeServiceLP_inner {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.HomeServiceLP--visible .HomeServiceLP_inner {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Badge */
+.HomeServiceLP_badge {
+  display: inline-block;
+  padding: 4px 14px;
+  border-radius: 999px;
+  background: rgba(255, 217, 0, 0.15);
+  border: 1px solid rgba(255, 217, 0, 0.5);
+  color: #FFD900;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-4);
+}
+
+/* Title */
+.HomeServiceLP_title {
+  font-family: var(--font-heading);
+  font-size: clamp(3.5rem, 12vw, 8rem);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  margin: 0 0 var(--space-3);
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.15em;
+}
+
+.HomeServiceLP_titleEn {
+  color: #FFD900;
+  text-shadow:
+    0 0 40px rgba(255, 217, 0, 0.8),
+    0 0 80px rgba(255, 217, 0, 0.4);
+}
+
+.HomeServiceLP_titleJa {
+  color: #ffffff;
+  text-shadow:
+    0 0 40px rgba(255, 255, 255, 0.4),
+    0 0 80px rgba(255, 255, 255, 0.2);
+}
+
+/* Tagline */
+.HomeServiceLP_tagline {
+  font-family: var(--font-heading);
+  font-size: clamp(1.1rem, 3vw, 1.5rem);
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.9);
+  letter-spacing: 0.06em;
+  margin: 0 0 var(--space-4);
+}
+
+/* Description */
+.HomeServiceLP_desc {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.65);
+  margin: 0 0 var(--space-8);
+}
+
+/* Stats row */
+.HomeServiceLP_stats {
+  display: flex;
+  justify-content: center;
+  gap: clamp(var(--space-6), 6vw, var(--space-12));
+  margin-bottom: var(--space-8);
+}
+
+.HomeServiceLP_stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.HomeServiceLP_statValue {
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 5vw, 2.8rem);
+  font-weight: 900;
+  color: #FFD900;
+  line-height: 1;
+  text-shadow: 0 0 20px rgba(255, 217, 0, 0.6);
+}
+
+.HomeServiceLP_statLabel {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 0.08em;
+}
+
+/* CTA row */
+.HomeServiceLP_cta {
+  display: flex;
+  gap: var(--space-3);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 640px) {
+  .HomeServiceLP_stats {
+    gap: var(--space-5);
+  }
+  .HomeServiceLP_cta {
+    flex-direction: column;
+    align-items: center;
+  }
+}
