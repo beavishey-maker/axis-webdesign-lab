@@ -13,22 +13,27 @@ export default function ContactForm() {
     setStatus('submitting')
 
     const form = e.currentTarget
-    const data = new FormData(form)
+    const payload = Object.fromEntries(new FormData(form).entries())
 
     try {
-      const res = await fetch('https://formspree.io/f/mnjydddw', {
+      const res = await fetch('https://formspree.io/f/mrevlrrv', {
         method: 'POST',
-        body: data,
-        headers: { Accept: 'application/json' },
+        body: JSON.stringify(payload),
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+        },
       })
 
       if (res.ok) {
         setStatus('success')
         form.reset()
       } else {
+        console.error('Formspree error response:', res.status, res.statusText)
         setStatus('error')
       }
-    } catch {
+    } catch (err) {
+      console.error('Formspree submission error:', err)
       setStatus('error')
     }
   }
