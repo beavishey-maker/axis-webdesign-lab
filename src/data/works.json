@@ -1,5 +1,15 @@
 [
   {
+    "id": "work-moneyweb",
+    "title": "money web",
+    "client": "お金とキャリアの伴走プランナー",
+    "description": "40〜50代女性向けFP×キャリアコンサルタントのブランドサイト。AIチャットボット実装・お金タイプ診断・管理ダッシュボードを含む多機能構成。",
+    "expertise": ["FP・キャリア相談"],
+    "thumbnail": "/images/work-moneyweb.png",
+    "href": "https://www.kanako-moneyadvisor.com",
+    "year": 2025
+  },
+  {
     "id": "work-01",
     "title": "イナトラ / 虎屋横丁 商店会サイト",
     "client": "虎屋横丁・稲荷小路親交会（仙台・国分町）",
@@ -58,7 +68,7 @@
     "title": "アイルビジョン コーポレートサイト",
     "client": "株式会社I'll Vision（仙台・宮城）",
     "expertise": ["コーポレートサイト", "AIチャットボット", "公式LINE"],
-    "thumbnail": "/works/halvision.jpg",
+    "thumbnail": "/works/illvision.png",
     "href": "https://illvision.jp/",
     "year": 2023
   },

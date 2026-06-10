@@ -135,3 +135,28 @@
   background: var(--color-brand-dark);
   transform: translateY(-1px);
 }
+
+.form_submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.form_message {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  padding: 1rem 1.25rem;
+  border-radius: 8px;
+}
+
+.form_message_success {
+  color: #166534;
+  background: #f0fdf4;
+  border: 1.5px solid #bbf7d0;
+}
+
+.form_message_error {
+  color: #991b1b;
+  background: #fef2f2;
+  border: 1.5px solid #fecaca;
+}

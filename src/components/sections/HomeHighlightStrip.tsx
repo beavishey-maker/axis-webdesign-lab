@@ -6,7 +6,6 @@ import Center from '@/components/layout/Center'
 
 const items = [
   { text: 'デザイン × コード = 感動', color: '#2D4AFF', icon: '✦', bg: 'rgba(45,74,255,0.08)' },
-  { text: '最速3時間で納品', color: '#FF2D78', icon: '⚡', bg: 'rgba(255,45,120,0.08)' },
   { text: 'AIが変える未来のWeb', color: '#00C896', icon: '◎', bg: 'rgba(0,200,150,0.08)' },
   { text: '仙台発、全国対応', color: '#FF6B35', icon: '★', bg: 'rgba(255,107,53,0.08)' },
 ]

@@ -32,23 +32,6 @@ const values = [
   },
 ]
 
-const members = [
-  {
-    name: 'Hiroshi Tanaka',
-    role: 'Creative Director',
-    bio: 'デザインとエンジニアリングをブリッジする15年のキャリア。',
-  },
-  {
-    name: 'Yuki Sato',
-    role: 'Lead UX Designer',
-    bio: 'ユーザーリサーチと情報設計を専門とするUXデザイナー。',
-  },
-  {
-    name: 'Kenji Yamamoto',
-    role: 'Frontend Engineer',
-    bio: 'パフォーマンスとアクセシビリティにこだわるフロントエンドエンジニア。',
-  },
-]
 
 export default function AboutPage() {
   return (
@@ -59,11 +42,13 @@ export default function AboutPage() {
           <Center>
             <Breadcrumb items={[{ label: 'About' }]} />
             <Subhead type="small" color="brand">About</Subhead>
-            <h1 className={styles.pageTitle}>We are Axis.</h1>
+            <h1 className={styles.pageTitle}>Hi, I&apos;m Axis.</h1>
             <p className={styles.pageSub}>
-              デザインとテクノロジーの交差点に立つ、東京のWebデザインスタジオです。
-              UIデザインからフロントエンド実装、ブランドアイデンティティまで
-              一気通貫で対応します。
+              仙台を拠点に活動するWebクリエイターです。<br />
+              「このサイト、いいな」と思ってもらえるものを、<br />
+              一緒に作りたいと思っています。<br />
+              Webサイトで、あなたのビジネスを前に進めます。<br />
+              デザインから実装まで、一貫して向き合います。
             </p>
           </Center>
         </div>
@@ -94,25 +79,6 @@ export default function AboutPage() {
           </Center>
         </section>
 
-        {/* Team */}
-        <section aria-label="チーム" className={styles.section}>
-          <Center>
-            <Subhead type="small" color="brand" className={styles.sectionLabel}>Team</Subhead>
-            <h2 className={styles.sectionTitle}>Our Team</h2>
-            <div className={styles.teamGrid}>
-              {members.map((member) => (
-                <div key={member.name} className={styles.teamMember}>
-                  <div className={styles.teamMember_avatar} aria-hidden="true">
-                    {member.name.charAt(0)}
-                  </div>
-                  <h3 className={styles.teamMember_name}>{member.name}</h3>
-                  <p className={styles.teamMember_role}>{member.role}</p>
-                  <p className={styles.teamMember_bio}>{member.bio}</p>
-                </div>
-              ))}
-            </div>
-          </Center>
-        </section>
       </main>
       <FooterCTA />
       <Footer />

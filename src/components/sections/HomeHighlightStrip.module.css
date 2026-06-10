@@ -5,14 +5,25 @@
 }
 
 .Strip_grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: var(--space-4);
+}
+
+.Strip_card {
+  flex: 1 1 calc(50% - var(--space-4));
+  min-width: 200px;
 }
 
 @media (min-width: 768px) {
   .Strip_grid {
-    grid-template-columns: repeat(4, 1fr);
+    flex-wrap: nowrap;
+  }
+
+  .Strip_card {
+    flex: 1;
+    max-width: 340px;
   }
 }
 

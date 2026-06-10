@@ -20,7 +20,6 @@ const navGroups = [
     label: 'Company',
     links: [
       { label: 'Works', href: '/works' },
-      { label: 'Blog', href: '/blog' },
       { label: 'About', href: '/about' },
       { label: 'Contact', href: '/contact' },
     ],
@@ -28,8 +27,8 @@ const navGroups = [
   {
     label: 'Legal',
     links: [
-      { label: 'Privacy Policy', href: '/privacy' },
-      { label: 'Cookie Policy', href: '/cookies' },
+      { label: 'Privacy Policy', href: '/privacy-policy' },
+      { label: 'Cookie Policy', href: '/cookie-policy' },
     ],
   },
 ]
@@ -99,7 +98,6 @@ export default function Footer() {
 
         <div className={styles.Footer_bottom}>
           <p className={styles.Footer_copy}>© {new Date().getFullYear()} Axis Web Design Lab. All rights reserved.</p>
-          <p className={styles.Footer_address}>Tokyo, Japan</p>
         </div>
       </Center>
     </footer>

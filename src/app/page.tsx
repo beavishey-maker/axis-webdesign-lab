@@ -4,10 +4,8 @@ import HomeCover from '@/components/hero/HomeCover'
 import HomeSectionHeading from '@/components/sections/HomeSectionHeading'
 import HomeMarquee from '@/components/sections/HomeMarquee'
 import HomeSnsSection from '@/components/sections/HomeSnsSection'
-import HomeStats from '@/components/sections/HomeStats'
 import HomeInterrogativeSection from '@/components/sections/HomeInterrogativeSection'
 import HomeServiceTeaser from '@/components/sections/HomeServiceTeaser'
-import HomeServiceLP from '@/components/sections/HomeServiceLP'
 import HomeServiceAIDiag from '@/components/sections/HomeServiceAIDiag'
 import BackdropWithScrollStatic from '@/components/sections/BackdropWithScrollStatic'
 import HomeWorksSection from '@/components/sections/HomeWorksSection'
@@ -60,10 +58,6 @@ export default function HomePage() {
         {/* ハイライト4カード */}
         <HomeHighlightStrip />
 
-        <HomeGlowDivider color="#00C896" />
-
-        {/* 実績数字カウントアップ */}
-        <HomeStats />
 
         <HomeGlowDivider color="#FF6B35" />
 
@@ -79,10 +73,6 @@ export default function HomePage() {
 
         {/* 6サービス紹介 */}
         <HomeServiceTeaser />
-
-        {/* 音速LP — 高速LP制作サービス */}
-        <HomeGlowDivider color="#FFD900" />
-        <HomeServiceLP />
 
         {/* AI診断 × データ収集サービス */}
         <HomeGlowDivider color="#c084fc" />
