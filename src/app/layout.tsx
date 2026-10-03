@@ -30,7 +30,10 @@ export const metadata: Metadata = {
     locale: 'ja_JP',
   },
   verification: {
-    google: 'DRL8N_69Q9X1Ho2K89L2sEmTmq566UQlmrAh8uLee_E',
+    google: [
+      'DRL8N_69Q9X1Ho2K89L2sEmTmq566UQlmrAh8uLee_E',
+      'R_MF-nGfAv4L3iG27KGlCn3kuX3eBg4MxDtAELiXEsg',
+    ],
   },
 }
 
